@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+h1, h2{
+    font-weight: 500;
+    font-family: 'Lexend', 'Noto Sans JP', sans-serif;
+}
+h2 {
+    color: steelblue;
+    line-height: 5rem;
+    font-size: 2.5rem;
+}
+p {
+    font-weight: 300;
+    text-align: justify;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 1rem 0;
+    line-height: 3rem;
+}
+section {
+    margin: 2rem 0;
+}
+article {
+    width: 50vw;
+    margin: auto;
+}
+rt {
+    font-size: 0.7rem;
+}
+footer {
+    background:#222;
+    color: white;
+    height: 6rem;
+}
+footer p{
+    text-align: center;
+    font-weight: 300;
+    line-height: 2rem;
+    font-family: 'Lexend', 'Noto Sans JP', sans-serif;;
+}
+footer p a{
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: steelblue 2px solid;
+}
+
+@media screen and (min-width:480px) {
+    footer p{
+        margin: auto 25%;
+    }
+    header {
+        height: 7rem;
+    }
+    h1{
+        display: inline-block;
+        margin: 2rem 2rem;
+        font-size: min(6vw,3rem);
+        line-height: 4rem;
+    }
+    article {
+        width: 50vw;
+    }
+}
+@media screen and (max-width:480px) {
+    header {
+        height: 50vh;
+        background: #222;
+        color: white;
+        position: relative;
+    }
+    h1{
+        display: block;
+        position: absolute;
+        margin: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 10vw;
+        text-align: center;
+        line-height: 4rem;
+    }
+    article {
+        width: 80vw;
+    }
+}
