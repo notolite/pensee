@@ -25,6 +25,12 @@ p {
     margin: 1rem 0;
     line-height: 3rem;
 }
+a {
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: steelblue 2px solid;
+    color: inherit;
+}
 section {
     margin: 2rem 0;
 }
@@ -45,12 +51,6 @@ footer p{
     font-weight: 300;
     line-height: 2rem;
     font-family: 'Lexend', 'Noto Sans JP', sans-serif;;
-}
-footer p a{
-    color: white;
-    display: inline-block;
-    text-decoration: none;
-    border-bottom: steelblue 2px solid;
 }
 
 @media screen and (min-width:480px) {
