@@ -24,10 +24,10 @@ p {
     margin: 1rem 0;
     line-height: 3rem;
 }
-section[lang="jp"] p{
+*[lang="jp"]{
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
 }
-section[lang="en"] p{
+*[lang="en"], *[lang="fr"]{
     font-family: 'Zilla Slab', serif;
 }
 a {
