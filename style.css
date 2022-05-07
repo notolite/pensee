@@ -32,7 +32,7 @@ p {
     margin: 1rem 0;
     line-height: 3rem;
 }
-*[lang="jp"]{
+*[lang="jp"], *[lang="ru"]{
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
 }
 *[lang="zh"]{
@@ -50,6 +50,27 @@ a {
 a:hover{
     color: steelblue;
     font-weight: 500;
+}
+a sup{
+    border-bottom: none;
+    color: steelblue;
+}
+p[lang="ru"] ruby {
+    ruby-align: start;
+    ruby-position: under;
+}
+ruby[title]{
+    color: steelblue;
+}
+cite{
+    font-size: inherit;
+}
+.trd{
+    border-left: solid 4px #91a5b5;
+    padding-left: 12px;
+}
+p[lang="ru"] rt{
+    color: steelblue;
 }
 section {
     margin: 2rem 0;
@@ -186,7 +207,8 @@ table tr:nth-child(odd) td{
     h1{
         display: block;
         position: absolute;
-        margin: 50%;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%,-50%);
         font-size: 10vw;
         text-align: center;
