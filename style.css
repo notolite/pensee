@@ -163,19 +163,33 @@ footer p{
 .inte{
     color:lightgoldenrodyellow;
 }
-table{
+.table040322a{
     width: 100%;
     table-layout: fixed;
     font-weight: 300;
     border-collapse: collapse;
 }
-table td{
+.table040322a td{
     padding: 0.2rem;
 }
-table tr:nth-child(odd) td{
+.table040322a tr:nth-child(odd) td{
     background-color: rgb(187, 222, 236);
 }
-
+.table040601a{
+    font-weight: 300;
+    margin-bottom: 2em;
+}
+.table040601a td{
+    padding: 0.2rem;
+}
+.table040601a tr:first-child {
+    color:rgb(66, 145, 176);
+    font-weight: 600;
+}
+.table040601a tr:nth-child(3) td {
+    color: rgb(66, 145, 176);
+    font-size: smaller;
+}
 @media screen and (min-width:480px) {
     footer p{
         margin: auto 25%;
