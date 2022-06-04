@@ -20,7 +20,7 @@ ruby[title]{
     color: steelblue;
 }
 .trd{
-    border-left: solid 4px #91a5b5;
+    border-left: solid 4px darkcyan;
     padding-left: 12px;
 }
 p[lang="ru"] rt{
@@ -122,11 +122,11 @@ rt {
     padding: 0.2rem;
 }
 .table040601a tr:first-child {
-    color:rgb(66, 145, 176);
+    color:darkcyan;
     font-weight: 600;
 }
 .table040601a tr:nth-child(3) td {
-    color: rgb(66, 145, 176);
+    color: darkcyan;
     font-size: smaller;
 }
 #returnkey{
