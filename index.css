@@ -19,3 +19,146 @@ ul li a {
 article {
     margin-top: 2rem;
 }
+
+@media screen and (min-width:480px) {
+    #clock{
+        position: fixed;
+        bottom: 2.5rem;
+        right: 2.5rem;
+        width: 14vw;
+        height: 14vw;
+    }  
+    .base {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        background-color: rgba(250,250,255,0.8);
+        border-radius: 50%;
+        width: 110%;
+        height: 110%;
+        bottom: -5%; 
+        right: -5%;
+    }
+    
+    .num {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-family: Lexend, sans-serif;
+        color: steelblue;
+        font-size: 0.7rem;
+    }
+    
+    .one {
+        top: 6.69872981%;
+        left: 25%;
+    }
+    
+    .two {
+        top: 25%;
+        left: 6.69872981%;
+    }
+    
+    .three {
+        top: 50%;
+        left: 0;
+        font-size: 1rem;
+    }
+    
+    .four {
+        top: 75%;
+        left: 6.69872981%;
+    }
+    
+    .five {
+        top: 93.301270189%;
+        left: 25%;
+    }
+    
+    .six {
+        top: 100%;
+        left: 50%;
+        font-size: 1rem;
+    }
+    
+    .seven {
+        top: 93.301270189%;
+        left: 75%;
+    }
+    
+    .eight {
+        top: 75%;
+        left: 93.301270189%;
+    }
+    
+    .nine {
+        top: 50%;
+        left: 100%;
+        font-size: 1rem;
+    }
+    
+    .ten {
+        top: 25%;
+        left: 93.301270189%;
+    }
+    
+    .eleven {
+        top: 6.69872981%;
+        left: 75%;
+    }
+    
+    .twelve {
+        top: 0;
+        left: 50%;
+        font-size: 1rem;
+    }
+    
+    .hand {
+        position: absolute;
+    }
+    
+    #hour {
+        width: 3px;
+        height: 70%;
+        top: 15%;
+        left: calc(50% - 3px);
+        background: linear-gradient(to bottom, steelblue 50%, transparent 50%);
+    }   
+    #min{
+        width: 2px;
+        height: 100%;
+        top: 0%;
+        left: calc(50% - 3px);
+        background: linear-gradient(to bottom, darkcyan 50%, transparent 50%);
+    }
+    #sec{
+        width: 1px;
+        height: 100%;
+        top: 0%;
+        left: calc(50% - 1px);
+        background: linear-gradient(to bottom, lightslategray 50%, transparent 50%);
+    }
+    .point {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #555;
+        border-radius: 50%;
+        transform: translate(-50%,-50%);
+        height: 0.3rem;
+        width: 0.3rem;
+    }
+    .name{
+        position: absolute;
+        top: -3rem;
+        color: steelblue;
+        font-family: Lexend, sans-serif;
+        text-align: center;
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px) {
+    #clock {
+        display: none;
+    }
+}

@@ -53,25 +53,45 @@
                 <li><a href="articles.htm#031029a">des objets fabriqués - 工芸品</a></li>
                 <li><a href="articles.htm#031028b">l'île de Satawal - サタワル島</a></li>
                 <li><a href="articles.htm#031028a">des rencontres d'étrangers - 未知との邂逅</a></li>
-            </ul>
+            </ul>           
         </article>
+        <div id="clock">
+            <div class="base"></div>
+            <div class="num one">1</div>
+            <div class="num two">2</div>
+            <div class="num three">3</div>
+            <div class="num four">4</div>
+            <div class="num five">5</div>
+            <div class="num six">6</div>
+            <div class="num seven">7</div>
+            <div class="num eight">8</div>
+            <div class="num nine">9</div>
+            <div class="num ten">10</div>
+            <div class="num eleven">11</div>
+            <div class="num twelve">12</div>
+            <div class="hand" id="sec"></div>
+            <div class="hand" id="min"></div>
+            <div class="hand" id="hour"></div>
+            <div class="point"></div>
+            <div class="name">LE TEMPS ACTUEL</div>
+        </div>
         <footer>
             <p>écrit par notolyte (<a target="_blank" href="https://twitter.com/notolytos">Twitter</a>)</p>
             <p>distribué par GitHub Pages</p>
         </footer>
         <script>
-            let r04mar22a0status = true;
-            window.onload = r04mar22a0();
-            function r04mar22a0(){
-                if(!r04mar22a0status) {
-                    r04mar22a0status = true;
-                    document.getElementById("r040322a1").style.display = "block";
-                    document.getElementById("r040322a0").innerText = "このボックスをクリック／タップして閉じる"
-                } else {
-                    r04mar22a0status = false;
-                    document.getElementById("r040322a1").style.display = "none";
-                    document.getElementById("r040322a0").innerText = "このボックスをクリック／タップして開く"               
-                }
+            // clock
+            let hour, min, sec;
+            window.onload = () => {
+                window.setInterval(redraw, 1000);
+            }
+            let redraw = function () {
+                hour = new Date().getHours();
+                min = new Date().getMinutes();
+                sec = new Date().getSeconds();
+                document.getElementById("hour").style.transform = "rotate(-" + ((60 * hour) + min) * 0.5 + "deg)";
+                document.getElementById("min").style.transform = "rotate(-" + 6 * min + "deg)";
+                document.getElementById("sec").style.transform = "rotate(-" + 6 * sec + "deg)";
             }
         </script>
     </body>
