@@ -32,6 +32,39 @@ section {
 rt {
     font-size: 0.7rem;
 }
+[data-ruby]{
+    position: relative;
+    width:fit-content;
+    display: inline-block;
+}
+[data-ruby]::after{
+    content: attr(data-ruby);
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    line-height: 1rem;
+    width: max-content;
+    text-align: left;
+    color: steelblue;
+    font-size: smaller;
+    overflow: visible;
+    white-space: nowrap;;
+}
+.originalText{
+    color: darkcyan;
+    font-weight: 700;
+    line-height: 1rem;
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+.translatedText{
+    line-height: 1rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+.gloss{
+    word-spacing: 1.8rem;
+}
 #r040322a0{
     font-weight: 300;
     background-color: steelblue;

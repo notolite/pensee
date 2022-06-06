@@ -20,8 +20,25 @@
         <header>
             <h1>de l'impression, de l'expression</h1>
         </header>
-
         <article>
+            <section id="040606a" lang="jp">
+                <h2>une nouvelle installation de gloses</h2>
+                <div class="data">originel, 06 jui 2022</div>
+                <p>ルビのデザインをcssで制御する方法みたいな記事を読んでいたところ、疑似要素の内容は属性の値を取得できるので、カスタム属性でhtmlの中にルビを書いてしまえば、疑似要素を使いつつも保守性が上がるみたいな話を目にしたので、早速やってみることにしました。今日は早く寝たいので、短めのグロス振りをします。というわけで、「モスクワ郊外の夕べ」の一番を。有名な歌なので日本語訳もあまたありますが、まあグロスをやってみたかったついでということでご愛嬌。明日以降時間とやる気があったら二番以降もやるかもしれません。</p>
+                <p class="originalText">Не слышны в саду даже шорохи</p>
+                <p class="gloss">не <span data-ruby="聞こえる-短.複">слы́шн-ы</span> в <span data-ruby="庭-男.単.前">са́д-у</span> <span data-ruby="さえ">да́же</span> <span data-ruby="ささめき-男.複.主">шо́рох-и</span></p>
+                <p class="translatedText">庭ではささめきさえも聞こえない</p>
+                <p class="originalText">Всё здесь замерло до утра.</p>
+                <p class="gloss">всё здесь <span data-ruby="じっとする-過-中.単">за́мер-л-о</span> до <span data-ruby="朝-中.生">у́тр-а</span></p>
+                <p class="translatedText">すべてがここで朝までじっとしている</p>
+                <p class="originalText">Если б знали вы, как мне дороги</p>
+                <p class="gloss">Если б зна́ли вы, как мне <span data-ruby="大切な-短.複">до́рог-и</p>
+                <p class="translatedText">もし君が知っていたら、私にとってどれほど大切か</p>
+                <p class="originalText">подмосковные вечера.</p>
+                <p class="gloss">подмоско́вн-ые <span data-ruby="夕-男.複.生">вечер-а́</p>
+                <p class="translatedText">モスクワ郊外の夕べが</p>
+                <p>以上、サンプルでした。もとの要素の幅は疑似要素にあわせられないので、グロスのほうが長くなってしまうと、隣り合う語のグロスが被ってしまうという問題が起こりました。グロス部分の横幅を目いっぱいにして均等割り付けにし、一行辺りの語数を増やすことで見た目の異様さを減らしてごまかしてみようかとも思ったのですが、そうするとレスポンシブ対応が死んでしまいます。今回はさしあたり、word spacingを増やすことで対応してみました。が、よりよい方法の探求が必要そうです。</p>
+            </section>
             <section id="040605a" lang="en">
                 <h2>le monde à moi de l'anglais</h2>
                 <div class="data">originel, 05 jui 2022</div>
@@ -70,8 +87,8 @@
                         <td colspan="4">Jubilate Deo, omnis terra;</td>
                     </tr>
                     <tr>
-                        <td>jūbil-ā-te</td>
-                        <td>de-ō</td>
+                        <td>jūbil-ā-te</td>
+                        <td>de-ō</td>
                         <td>omn-is</td>
                         <td>terr-a</td>
                     </tr>
@@ -90,10 +107,10 @@
                         <td colspan="4">servite Domino in laetitia.</td>
                     </tr>
                     <tr>
-                        <td>serv-ī-te</td>
-                        <td>domin-ō</td>
+                        <td>serv-ī-te</td>
+                        <td>domin-ō</td>
                         <td>in</td>
-                        <td>laetiti-ā</td>
+                        <td>laetiti-ā</td>
                     </tr>
                     <tr>
                         <td>仕ふ-幹-命.2PL</td>
@@ -112,7 +129,7 @@
                     <tr>
                         <td>introi-te</td>
                         <td>in</td>
-                        <td>conspe-ct-ū</td>
+                        <td>conspe-ct-ū</td>
                         <td>ej-us</td>
                     </tr>
                     <tr>
@@ -131,7 +148,7 @@
                     </tr>
                     <tr>
                         <td>in</td>
-                        <td>exultātiōn-e</td>
+                        <td>exultātiōn-e</td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -151,7 +168,7 @@
                     </tr>
                     <tr>
                         <td>quoniam</td>
-                        <td>suāv-is</td>
+                        <td>suāv-is</td>
                         <td>Domin-us</td>
                         <td></td>
                     </tr>
@@ -172,7 +189,7 @@
                     <tr>
                         <td>in</td>
                         <td>aeternum</td>
-                        <td>misericordi-ā</td>
+                        <td>misericordi-ā</td>
                         <td>ej-us</td>
                     </tr>
                     <tr>
@@ -211,8 +228,8 @@
                     </tr>
                     <tr>
                         <td>et</td>
-                        <td>generātiōn-em</td>
-                        <td>vēritās</td>
+                        <td>generātiōn-em</td>
+                        <td>vēritās</td>
                         <td>ej-us</td>
                     </tr>
                     <tr>
@@ -512,7 +529,7 @@
                     <tr><td></td><td>∅, l</td><td>ʐ</td><td></td><td>∅, ʐ</td></tr>
                 </table>
                 <p>続いて韻母。こちらもおおむね三字以上の対応をもって規則としています。括弧とスラッシュで区切られているペアは声母による相補分布で，より頻度が高いほうを左に書いており，それぞれ(丸括弧)は右が唇音，&lt;三角括弧&gt;は右が歯茎音と/ʐ/，{波括弧}は右が北京の/ʐ/，合肥の/∅/，[角括弧]は右が歯茎破擦音・摩擦音とそり舌音の場合です。</p>
-                <table>
+                <table class="table040322a">
                     <tr><td>a</td><td>ai</td><td>au</td><td>an</td><td>aŋ</td></tr>
                     <tr><td>a, ɐʔ</td><td>ᴇ, ɐʔ</td><td>ɔ, uɐʔ</td><td>æ̃</td><td>ɑ̃</td></tr>
                     <tr><td>ia</td><td></td><td>iau</td><td>iɛn</td><td>iaŋ</td></tr>
