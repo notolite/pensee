@@ -12,6 +12,10 @@ h2 {
     line-height: 5rem;
     font-size: 2.5rem;
 }
+h3 {
+    color: darkcyan;
+    font-weight: 700;
+}
 p, ul li {
     font-weight: 300;
     text-align: justify;
