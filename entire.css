@@ -28,7 +28,7 @@ p, ul li {
 *[lang="zh"]{
     font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;   
 }
-*[lang="en"], *[lang="fr"], *[lang="tp"]{
+*[lang="en"], *[lang="fr"], *[lang="tp"], *[lang="eu"]{
     font-family: 'Zilla Slab', serif;
 }
 article a, footer a{
