@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="ja">
+    <meta charset="utf-8" />
+    <title>グロスの新しい実装法 | les impressions et les expressions</title>
+    <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
+    <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans:wght@300&family=Noto+Sans+SC:wght@300&family=Zilla+Slab:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./../css/entire.css">
+    <link rel="stylesheet" href="./../css/articles.css">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@notolytos" />
+    <meta property="og:url" content="https://notolyte.github.io/pensee/articles/031.htm" />
+    <meta property="og:title" content="グロスの新しい実装法 | les impressions et les expressions" />
+    <meta property="og:description"
+        content="ルビのデザインをcssで制御する方法みたいな記事を読んでいたところ、疑似要素の内容は属性の値を取得できるので、カスタム属性でhtmlの中にルビを書いてしまえば、疑似要素を使いつつも保守性が上がるみたいな話を目にしたので、早速やってみることにしました。" />
+</head>
+
+<body>
+    <header>
+        <h1>les impressions et les expressions</h1>
+    </header>
+    <article lang="jp">
+        <h2 data-num="031">グロスの新しい実装法</h2>
+        <div class="subtitle">une nouvelle installation de gloses</div>
+        <div class="data">originel, 06 juin 2022</div>
+        <p>ルビのデザインをcssで制御する方法みたいな記事を読んでいたところ、疑似要素の内容は属性の値を取得できるので、カスタム属性でhtmlの中にルビを書いてしまえば、疑似要素を使いつつも保守性が上がるみたいな話を目にしたので、早速やってみることにしました。今日は早く寝たいので、短めのグロス振りをします。というわけで、「モスクワ郊外の夕べ」の一番を。有名な歌なので日本語訳もあまたありますが、まあグロスをやってみたかったついでということでご愛嬌。明日以降時間とやる気があったら二番以降もやるかもしれません。
+        </p>
+        <p class="originalText">Не слышны в саду даже шорохи</p>
+        <p class="gloss">не <span data-ruby="聞こえる-短.複">слы́шн-ы</span> в <span data-ruby="庭-男.単.前">са́д-у</span> <span
+                data-ruby="さえ">да́же</span> <span data-ruby="ささめき-男.複.主">шо́рох-и</span></p>
+        <p class="translatedText">庭ではささめきさえも聞こえない</p>
+        <p class="originalText">Всё здесь замерло до утра.</p>
+        <p class="gloss">всё здесь <span data-ruby="じっとする-過-中.単">за́мер-л-о</span> до <span
+                data-ruby="朝-中.生">у́тр-а</span></p>
+        <p class="translatedText">すべてがここで朝までじっとしている</p>
+        <p class="originalText">Если б знали вы, как мне дороги</p>
+        <p class="gloss">Если б зна́ли вы, как мне <span data-ruby="大切な-短.複">до́рог-и</p>
+        <p class="translatedText">もし君が知っていたら、私にとってどれほど大切か</p>
+        <p class="originalText">подмосковные вечера.</p>
+        <p class="gloss">подмоско́вн-ые <span data-ruby="夕-男.複.生">вечер-а́</p>
+        <p class="translatedText">モスクワ郊外の夕べが</p>
+        <p>以上、サンプルでした。もとの要素の幅は疑似要素にあわせられないので、グロスのほうが長くなってしまうと、隣り合う語のグロスが被ってしまうという問題が起こりました。グロス部分の横幅を目いっぱいにして均等割り付けにし、一行辺りの語数を増やすことで見た目の異様さを減らしてごまかしてみようかとも思ったのですが、そうするとレスポンシブ対応が死んでしまいます。今回はさしあたり、word
+            spacingを増やすことで対応してみました。が、よりよい方法の探求が必要そうです。</p>
+
+    </article>
+    <footer>
+        <p>écrit par notolyte (<a target="_blank" href="https://twitter.com/notolytos">Twitter</a>)</p>
+        <p>distribué par GitHub Pages</p>
+    </footer><a href="./../index.htm">
+        <div id="returnkey">
+            <div></div>
+            <p>RETOURNER</p>
+        </div>
+    </a>
+</body>
+
+</html>

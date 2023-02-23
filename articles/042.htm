@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="ja">
+    <meta charset="utf-8" />
+    <title>FontForgeで作成したフォントが欧文用として認識される問題の解決 | les impressions et les expressions</title>
+    <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
+    <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans:wght@300&family=Noto+Sans+SC:wght@300&family=Zilla+Slab:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./../css/entire.css">
+    <link rel="stylesheet" href="./../css/articles.css">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@notolytos" />
+    <meta property="og:url" content="https://notolyte.github.io/pensee/articles/042.htm" />
+    <meta property="og:title" content="FontForgeで作成したフォントが欧文用として認識される問題の解決 | les impressions et les expressions" />
+    <meta property="og:description" content="FontForgeで作成したフォントファイルが欧字のフォントと認識されてしまい、ブラウザや各種デザインソフトでは使用できるのに、メモ帳（notepad.exe）やワード（MS Office
+            Word）で日本語が使用できない問題に二年くらい悩んでいたのですが、それがあっさりと解決したので、方法を書き記しておきます。" />
+</head>
+
+<body>
+    <header>
+        <h1>les impressions et les expressions</h1>
+    </header>
+    <article lang="jp">
+        <h2 data-num="042">FontForgeで作成したフォントが欧文用として認識される問題の解決</h2>
+        <div class="subtitle">une police crée avec FontForge reconnue comme celle d'européenne</div>
+        <div class="data">originel, 16 août 2022</div>
+        <p>FontForgeで作成したフォントファイルが欧字のフォントと認識されてしまい、ブラウザや各種デザインソフトでは使用できるのに、メモ帳（notepad.exe）やワード（MS Office
+            Word）で日本語が使用できない問題に二年くらい悩んでいたのですが、それがあっさりと解決したので、方法を書き記しておきます。いやはや、めちゃくちゃ簡単なことなんですけど、ググっても出てこなかったので……。</p>
+        <h3>前提</h3>
+        <p>わたしはいつも手書きフォントを作るとき、手っ取り早く<a
+                href="https://www.calligraphr.com/en/">Calligraphr</a>を使っています。というのも一字一字丁寧に作画する作業を何千字もやるなんてプロの所業……。なんですが、Calligraphrはひとつのフォントファイルに、無料版で75文字、有料版でも300字ちょいしか含めることができない。常用漢字だけで二千を超える日本語のことなんぞは端から想定されていないわけです。というわけで、どうせ有料（月額800円）を払っても全部は入れられないならば——ということで、わたしは基本的にセコく無料版で75字が収録されたフォントファイルを大量に生成し、最後にそれをFontForgeで結合しているわけです。そのような前提で以下の記事を書き進めますのでご了解くださればと思います。
+        </p>
+        <h3>結論</h3>
+        <p>非常に結論が明快なので、ぱぱっと書いて終わりにします。メニューバーの「エレメント」から「フォント情報」を選択しますと、なにやらいろいろ書いてあるダイアログが。その中の、左列のメニューから「OS/2」を選びまして、するとダイアログ上部に「その他」「メトリック」……といろいろ並んでいますから、そこで「文字セット」というのを選びまして、「Unicode範囲」というところから、おそらくデフォルトではラテン文字系しかチェックが入っていないものと思いますから、漢字や仮名に適宜チェックを入れていただきます。一番ベーシックな漢字は「CJK
+            (& Ext A/B) & CJK Radicals Sup & Kangxi & IDC &
+            Kanbun」という項目です。それからダイアログ下部の「MSコードページ」という設定の部分から、西欧にチェックが入っていると思いますから、スクロールバーを下に辿っていただき、「日本語」にもチェックを入れます。これで完了です。
+        </p>
+        <h3>言い訳</h3>
+        <p>わたしはフォントのことがあんまりよく分かっていないので、非常に基礎的なことや間違っていることを書いているかもしれないのですが、ない情報よりある情報ということでインターネットに上げております、何卒ご理解いただければと存じます。
+        </p>
+
+    </article>
+    <footer>
+        <p>écrit par notolyte (<a target="_blank" href="https://twitter.com/notolytos">Twitter</a>)</p>
+        <p>distribué par GitHub Pages</p>
+    </footer><a href="./../index.htm">
+        <div id="returnkey">
+            <div></div>
+            <p>RETOURNER</p>
+        </div>
+    </a>
+</body>
+
+</html>
