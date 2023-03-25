@@ -38,6 +38,10 @@ ul li {
     font-family: 'Zilla Slab', serif;
 }
 
+.extletters {
+    font-family: 'Noto Sans', sans-serif;
+}
+
 article a,
 footer a {
     display: inline-block;
@@ -80,6 +84,9 @@ footer p {
     ;
 }
 
+i {
+    font-size: inherit;
+}
 
 @media screen and (min-width:480px) {
     footer p {
