@@ -8,7 +8,7 @@
         <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
         <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans:wght@300&family=Noto+Sans+SC:wght@300&family=Zilla+Slab:wght@300&display=swap"
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Noto+Sans:wght@300;500&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans+SC:wght@300&display=swap"
                 rel="stylesheet">
         <link rel="stylesheet" href="./../css/entire.css">
         <link rel="stylesheet" href="./../css/articles.css">
@@ -24,7 +24,7 @@
 
 <body>
         <header>
-                <h1>les impressions et les expressions</h1>
+                <h1>les&#160;impressions et les&#160;expressions</h1>
         </header>
         <article lang="jp">
                 <h2 data-num="020">合肥話と北京語/普通話の音韻比較</h2>
@@ -291,338 +291,262 @@
                 </div>
                 <p>これで「文字,合肥声母,合肥韻母,合肥調値,北京声母,北京韻母,北京調値」の順番にシェルに出力されていくはずです。普通話と北京話は違う気もするんですけど，普通話は別のページに書いてあって取得が面倒くさいので北京話で許してもらうことにしました（誰に？）　どの都市の発音が収録されてるかは漢字ごとに結構ばらつきがあって，もし合肥のがなかったら404を返してもらうことにしています。型とか何も考えてないコード書いちゃったけどまあいいや。で，Start-Transcriptで出力結果がtxtファイルに残ってくれるはずなので，これを適宜加工して最後に拡張子をcsvに変更します。いきなりcsvで出力する方法も絶対あると思うんですけどやり方調べるのがめんどくさかったからやめました。あと声調は対応がわかりきってるから調値はしょうみいらなかったなって終わってから思いました。で，excelで開いてフィルタリングして分析していきます。ちなみに404が返ってきた字は596字だったのでサンプルサイズは1904字ということになります。ほかにも微妙に取得に失敗してる字があるからもうちょっと小さいかもしれない。まあでも一字一字の発音を知りたいっていうよりは大局の雰囲気をつかみたいだけなのでバグ取りは放棄します。
                 </p>
-                <p>（3月24日追記）上記コードを一般化して，<a
-                                href="https://github.com/notolyte/pensee/blob/main/files/fangyin_universal.ps1">文を入力すると任意都市の発音を漢典から取得して返してくれるシェルスクリプト</a>を書きました。
+                <p>（3月24日追記）上記コードを一般化して，文を入力すると任意都市の発音を漢典から取得して返してくれる<a
+                                href="https://github.com/notolyte/pensee/blob/main/files/fangyin_universal.ps1">シェルスクリプト</a>を書きました。
                 </p>
                 <h3>結果（声母）</h3>
                 <p>というわけで結果を書いていきます。まずは声母から。以下，普通話に言及する際は漢語拼音を用いますが，北京話と合肥話に言及する際には発音記号で話が進むのでご注意ください。</p>
-                <h4><span class="extletters">p</span></h4>
-                <p>84字中83字が合肥話の/<span class="extletters">p</span>/に対応しました。残る一字は<span lang="zh">〈瓣〉</span>で，これは/<span
-                                class="extletters">o</span>/っていうことになってるんですけど，声母が/<span
-                                class="extletters">o</span>/っていうことはあり得ないので，キーボード上の位置を考えてもpのタイポだと思います。</p>
-                <h4><span class="extletters">pʰ</span></h4>
+                <h4>p</h4>
+                <p>84字中83字が合肥話の/p/に対応しました。残る一字は<span
+                                lang="zh">〈瓣〉</span>で，これは/o/っていうことになってるんですけど，声母が/o/っていうことはあり得ないので，キーボード上の位置を考えてもpのタイポだと思います。
+                </p>
+                <h4>pʰ</h4>
                 <p>52字すべてが合肥話の/pʰ/に対応しました。</p>
-                <h4><span class="extletters">p~pʰ</span></h4>
+                <h4>p~pʰ</h4>
                 <p>なんか両方あるやつらが四字（<span lang="zh">〈波〉</span><span lang="zh">〈捕〉</span><span lang="zh">〈堡〉</span><span
-                                lang="zh">〈遍〉</span>）ありました。横着して北京話からデータを持ってきたので揺れてるんですね。普通話だとぜんぶ/<span
-                                class="extletters">p</span>/らしいです。合肥話では，最初の三字が/<span
-                                class="extletters">p</span>/で，あとの一字は/<span class="extletters">p</span>/と/<span
-                                class="extletters">pʰ</span>/で揺れていました。ということで，普通話との対応を考えると基本的には/<span
-                                class="extletters">p</span>/:/<span class="extletters">p</span>/が成立して，例外が合肥でも揺れている<span
+                                lang="zh">〈遍〉</span>）ありました。横着して北京話からデータを持ってきたので揺れてるんですね。普通話だとぜんぶ/p/らしいです。合肥話では，最初の三字が/p/で，あとの一字は/p/と/pʰ/で揺れていました。ということで，普通話との対応を考えると基本的には/p/:/p/が成立して，例外が合肥でも揺れている<span
                                 lang="zh">〈遍〉</span>一字ということになります。ぜんぶの音素についてこの精度で書くのめんどくさいな，論文じゃないし大体の雰囲気を知りたい感じなので後々記述が雑になっていくかもしれません。
                 </p>
-                <h4><span class="extletters">m</span></h4>
-                <p>79字すべてが合肥話の/<span class="extletters">m</span>/に対応しました。</p>
-                <h4><span class="extletters">∅~m</span></h4>
-                <p>/<span class="extletters">∅</span>/っていうのはゼロ声母のことです。該当するのは<span lang="zh">〈芒〉</span>一字で，普通話だと/<span
-                                class="extletters">m</span>/のみだと思います。そして合肥話でも/<span
-                                class="extletters">m</span>/です。うー，まじで横着しないでちゃんと普通話からデータ取ってくればよかった。以降，普通話と合肥話では一対一の対応が成立していて北京だけが揺れている場合には記述を省略します。
+                <h4>m</h4>
+                <p>79字すべてが合肥話の/m/に対応しました。</p>
+                <h4>∅~m</h4>
+                <p>/∅/っていうのはゼロ声母のことです。該当するのは<span
+                                lang="zh">〈芒〉</span>一字で，普通話だと/m/のみだと思います。そして合肥話でも/m/です。うー，まじで横着しないでちゃんと普通話からデータ取ってくればよかった。以降，普通話と合肥話では一対一の対応が成立していて北京だけが揺れている場合には記述を省略します。
                 </p>
-                <h4><span class="extletters">f</span></h4>
-                <p>74字すべてが合肥話の/<span class="extletters">f</span>/に対応しました。</p>
-                <h4><span class="extletters">t</span></h4>
-                <p>88字中81字が合肥話の/<span class="extletters">t</span>/に対応しました。<span lang="zh">〈地〉</span><span
-                                lang="zh">〈弟〉</span><span lang="zh">〈底〉</span><span lang="zh">〈帝〉</span><span
-                                lang="zh">〈第〉</span>は，普通話では&lt;di&gt;であるところが，/<span
-                                class="extletters">tsɿ</span>/になっていました。そのほか，<span lang="zh">〈低〉</span>は有気音で/<span
-                                class="extletters">tsʰɿ</span>/になり，<span lang="zh">〈抵〉</span>は/<span
-                                class="extletters">t</span>/と/<span class="extletters">ts</span>/で揺れます。なお，北京で/<span
-                                class="extletters">ti</span>/であって合肥で/<span
-                                class="extletters">tsɿ</span>/にならないのはすべて入声字でした。</p>
-                <h4><span class="extletters">tʰ</span></h4>
-                <p>80字中73字が合肥話の/<span class="extletters">tʰ</span>/に対応しました。ほか，合肥話で/<span
-                                class="extletters">tsʰ</span>/になるのが<span lang="zh">〈剃〉</span><span
-                                lang="zh">〈替〉</span><span lang="zh">〈提〉</span><span lang="zh">〈題〉</span><span
-                                lang="zh">〈蹄〉</span>で，<span lang="zh">〈梯〉</span>は/<span
-                                class="extletters">tʰ~tsʰ</span>/，<span lang="zh">〈踏〉</span>は/<span
-                                class="extletters">t~tʰ</span>/で揺れました。この辺もぜんぶ普通話の韻母が/<span
-                                class="extletters">i</span>/ですね，逆にそれ以外で/<span
-                                class="extletters">ts</span>/に対応するのがあるのちょっと想像できないですけど直感的な結果が得られてよかったです。なお，揺れがある踏を除くと，北京で/<span
-                                class="extletters">tʰi</span>/であって合肥でも破裂音のままなのはすべて入声字でした。</p>
-                <h4><span class="extletters">t~tʰ</span></h4>
+                <h4>f</h4>
+                <p>74字すべてが合肥話の/f/に対応しました。</p>
+                <h4>t</h4>
+                <p>88字中81字が合肥話の/t/に対応しました。<span lang="zh">〈地〉</span><span lang="zh">〈弟〉</span><span
+                                lang="zh">〈底〉</span><span lang="zh">〈帝〉</span><span
+                                lang="zh">〈第〉</span>は，普通話では&lt;di&gt;であるところが，/tsɿ/になっていました。そのほか，<span
+                                lang="zh">〈低〉</span>は有気音で/tsʰɿ/になり，<span
+                                lang="zh">〈抵〉</span>は/t/と/ts/で揺れます。なお，北京で/ti/であって合肥で/tsɿ/にならないのはすべて入声字でした。</p>
+                <h4>tʰ</h4>
+                <p>80字中73字が合肥話の/tʰ/に対応しました。ほか，合肥話で/<span class="extletters">tsʰ</span>/になるのが<span
+                                lang="zh">〈剃〉</span><span lang="zh">〈替〉</span><span lang="zh">〈提〉</span><span
+                                lang="zh">〈題〉</span><span lang="zh">〈蹄〉</span>で，<span
+                                lang="zh">〈梯〉</span>は/tʰ~tsʰ/，<span
+                                lang="zh">〈踏〉</span>は/t~tʰ/で揺れました。この辺もぜんぶ普通話の韻母が/i/ですね，逆にそれ以外で/ts/に対応するのがあるのちょっと想像できないですけど直感的な結果が得られてよかったです。なお，揺れがある踏を除くと，北京で/tʰi/であって合肥でも破裂音のままなのはすべて入声字でした。
+                </p>
+                <h4>t~tʰ</h4>
                 <p>特筆性があるのは<span lang="zh">〈蝶〉</span>だけで，これは普通話でも&lt;dié&gt;か&lt;tiě&gt;で揺れるらしいです。<a
                                 href="https://kotobank.jp/zhjaword/%E8%9D%B4%E8%9D%B6">コトバンク</a>だと&lt;dié&gt;になってました。どうでもいいんですけど<span
-                                lang="zh">〈蝴蝶〉</span>は北京だと儿化するらしいです。さて，合肥の発音は/<span
-                                class="extletters">tiɐʔ</span>/~/<span
-                                class="extletters">tʰiɐʔ</span>/です。普通話と異なり，声調は入声を保存しているので揺れず，声母だけが揺れています。</p>
-                <h4><span class="extletters">ts</span></h4>
-                <p>45字中42字は/<span class="extletters">ts</span>/のまま，<span lang="zh">〈族〉</span>は有気音の/<span
-                                class="extletters">tsʰ</span>/になり，<span lang="zh">〈造〉</span>と<span
-                                lang="zh">〈躁〉</span>は揺れます。</p>
-                <h4><span class="extletters">tsʰ</span></h4>
-                <p>41字中39字はそのまま，<span lang="zh">〈茶〉</span>はそり舌音になって/<span class="extletters">ʈʂʰa</span>/，<span
-                                lang="zh">〈藏〉</span>は/<span class="extletters">tɕʰiɑ̃</span>/と/<span
-                                class="extletters">tsɑ̃</span>/で揺れます。</p>
-                <h4><span class="extletters">s</span></h4>
-                <p>47字中46字がそのまま，<span lang="zh">〈束〉</span>一字がそり舌になって/<span class="extletters">ʂuəʔ</span>/です</p>
-                <h4><span class="extletters">n</span></h4>
-                <p>36字中31字が/<span class="extletters">l</span>/に対応します。<span lang="zh">〈尼〉</span>と<span
-                                lang="zh">〈呢〉</span>はゼロ声母になって/<span class="extletters">ɿ</span>/，<span
-                                lang="zh">〈扭〉</span>は/<span class="extletters">liɯ</span>/と/<span
-                                class="extletters">ʈʂɯ</span>/で揺れ，<span lang="zh">〈泥〉</span>は/<span
-                                class="extletters">ɿ</span>/と/<span class="extletters">mɿ</span>/で揺れ，<span
-                                lang="zh">〈酿〉</span>は/<span class="extletters">liɑ̃</span>/陽平と/<span
-                                class="extletters">ʐɑ̃</span>/上でゆれます。</p>
-                <h4><span class="extletters">n~s</span></h4>
-                <p><span lang="zh">〈尿〉</span>一字が該当します。普通話では&lt;niào&gt;ですが，北京では/<span
-                                class="extletters">niau</span>去/~/<span class="extletters">suei</span>陰平/，合肥では/<span
-                                class="extletters">liɔ</span>去/~/<span class="extletters">se</span>陰平/です。</p>
-                <h4><span class="extletters">l</span></h4>
-                <p>入声は/<span class="extletters">l</span>/に，舒声はゼロになります。</p>
-                <h4><span class="extletters">ʈʂ</span></h4>
+                                lang="zh">〈蝴蝶〉</span>は北京だと儿化するらしいです。さて，合肥の発音は/tiɐʔ/~/tʰiɐʔ/です。普通話と異なり，声調は入声を保存しているので揺れず，声母だけが揺れています。
+                </p>
+                <h4>ts</h4>
+                <p>45字中42字は/ts/のまま，<span lang="zh">〈族〉</span>は有気音の/<span class="extletters">tsʰ</span>/になり，<span
+                                lang="zh">〈造〉</span>と<span lang="zh">〈躁〉</span>は揺れます。</p>
+                <h4>tsʰ</h4>
+                <p>41字中39字はそのまま，<span lang="zh">〈茶〉</span>はそり舌音になって/ʈʂʰa/，<span
+                                lang="zh">〈藏〉</span>は/tɕʰiɑ̃/と/tsɑ̃/で揺れます。</p>
+                <h4>s</h4>
+                <p>47字中46字がそのまま，<span lang="zh">〈束〉</span>一字がそり舌になって/ʂuəʔ/です</p>
+                <h4>n</h4>
+                <p>36字中31字が/l/に対応します。<span lang="zh">〈尼〉</span>と<span lang="zh">〈呢〉</span>はゼロ声母になって/ɿ/，<span
+                                lang="zh">〈扭〉</span>は/liɯ/と/<span class="extletters">ʈʂɯ</span>/で揺れ，<span
+                                lang="zh">〈泥〉</span>は/<span class="extletters">ɿ</span>/と/mɿ/で揺れ，<span
+                                lang="zh">〈酿〉</span>は/liɑ̃/陽平と/<span class="extletters">ʐɑ̃</span>/上でゆれます。</p>
+                <h4>n~s</h4>
+                <p><span lang="zh">〈尿〉</span>一字が該当します。普通話では&lt;niào&gt;ですが，北京では/niau去/~/suei陰平/，合肥では/liɔ去/~/se陰平/です。</p>
+                <h4>l</h4>
+                <p>入声は/l/に，舒声はゼロになります。</p>
+                <h4>ʈʂ</h4>
                 <p>118字中113字がそのまま，<span lang="zh">〈宅〉</span><span lang="zh">〈助〉</span><span lang="zh">〈皱〉</span><span
-                                lang="zh">〈窄〉</span><span lang="zh">〈摘〉</span>が/<span
-                                class="extletters">ts</span>/になります。</p>
-                <h4><span class="extletters">ʈʂʰ</span></h4>
-                <p>86字中74字がそのまま，韻母が/<span class="extletters">u</span>/，/<span class="extletters">əŋ</span>/，/<span
-                                class="extletters">uŋ</span>/の字のうち，〈<span lang="zh">充</span>〉〈<span
+                                lang="zh">〈窄〉</span><span lang="zh">〈摘〉</span>が/ts/になります。</p>
+                <h4>ʈʂʰ</h4>
+                <p>86字中74字がそのまま，韻母が/u/，/əŋ/，/<span class="extletters">uŋ</span>/の字のうち，〈<span lang="zh">充</span>〉〈<span
                                 lang="zh">初</span>〉〈<span lang="zh">衬</span>〉〈<span lang="zh">疮</span>〉〈<span
                                 lang="zh">础</span>〉〈<span lang="zh">称</span>〉〈<span lang="zh">崇</span>〉〈<span
-                                lang="zh">锄</span>〉〈<span lang="zh">楚</span>〉〈<span lang="zh">愁</span>〉は/<span
-                                class="extletters">tsʰ</span>/になり，〈<span lang="zh">辰</span>〉〈<span
-                                lang="zh">纯</span>〉は/<span class="extletters">ʈʂʰ</span>/~/<span
+                                lang="zh">锄</span>〉〈<span lang="zh">楚</span>〉〈<span lang="zh">愁</span>〉は/tsʰ/になり，〈<span
+                                lang="zh">辰</span>〉〈<span lang="zh">纯</span>〉は/ʈʂʰ/~/<span
                                 class="extletters">ʂ</span>/で揺れます。</p>
-                <h4><span class="extletters">ʈʂ~tsʰ</span></h4>
-                <p><span lang="zh">〈側〉</span>は普通話だと意味によって&lt;cè&gt;，&lt;zè&gt;，&lt;zhāi&gt;の三通りの読み方があり，北京には/<span
-                                class="extletters">ʈʂai</span>陰平/と/<span
-                                class="extletters">tsʰɤ</span>去/の二通りがあるそうです。&lt;zè&gt;は<span
+                <h4>ʈʂ~tsʰ</h4>
+                <p><span lang="zh">〈側〉</span>は普通話だと意味によって&lt;cè&gt;，&lt;zè&gt;，&lt;zhāi&gt;の三通りの読み方があり，北京には/ʈʂai陰平/と/tsʰɤ去/の二通りがあるそうです。&lt;zè&gt;は<span
                                 lang="zh">〈仄〉</span>の別字として使われるときの読みなので漢典は載せなかったのかもしれません。一方<span
-                                lang="zh">〈合肥〉</span>では，/<span
-                                class="extletters">tsʰɐʔ</span>入/の一通りのみが記されています（ただし元文献の記述が仔細さを欠くだけかもしれません）。</p>
-                <h4><span class="extletters">ʂ</span></h4>
-                <p>107字中88字がそのまま，韻母が/<span class="extletters">ʅ</span>/や/<span class="extletters">əŋ</span>/，/<span
-                                class="extletters">ən</span>/の字のうち，〈<span lang="zh">士</span>〉〈<span
+                                lang="zh">〈合肥〉</span>では，/tsʰɐʔ入/の一通りのみが記されています（ただし元文献の記述が仔細さを欠くだけかもしれません）。</p>
+                <h4>ʂ</h4>
+                <p>107字中88字がそのまま，韻母が/ʅ/や/əŋ/，/<span class="extletters">ən</span>/の字のうち，〈<span lang="zh">士</span>〉〈<span
                                 lang="zh">史</span>〉〈<span lang="zh">师</span>〉〈<span lang="zh">事</span>〉〈<span
                                 lang="zh">使</span>〉〈<span lang="zh">参</span>〉〈<span lang="zh">驶</span>〉〈<span
                                 lang="zh">牲</span>〉〈<span lang="zh">狮</span>〉〈<span lang="zh">梳</span>〉〈<span
                                 lang="zh">深</span>〉〈<span lang="zh">渗</span>〉〈<span lang="zh">数</span>〉〈<span
-                                lang="zh">瘦</span>〉は/<span class="extletters">s</span>/になります。〈<span
-                                lang="zh">始</span>〉は/<span class="extletters">ʈʂ</span>/~/<span
-                                class="extletters">ʂ</span>/で揺れ，〈<span lang="zh">暑</span>〉〈<span
-                                lang="zh">鼠</span>〉〈<span lang="zh">薯</span>〉は/<span class="extletters">ʈʂ</span>/になります。
+                                lang="zh">瘦</span>〉は/s/になります。〈<span lang="zh">始</span>〉は/ʈʂ/~/ʂ/で揺れ，〈<span
+                                lang="zh">暑</span>〉〈<span lang="zh">鼠</span>〉〈<span lang="zh">薯</span>〉は/ʈʂ/になります。
                 </p>
-                <h4><span class="extletters">ʐ</span></h4>
-                <p>基本的にはそのまま，/<span class="extletters">ʐuŋ</span>/はゼロ声母になって/<span
-                                class="extletters">iŋ</span>/になります。例外として<span lang="zh">〈惹〉</span>は/<span
-                                class="extletters">∅</span>/~/<span class="extletters">ʐ</span>/で揺れ，<span
-                                lang="zh">〈瑞〉</span>は/<span class="extletters">ʂue</span>/になります。</p>
-                <h4><span class="extletters">tɕ</span></h4>
+                <h4>ʐ</h4>
+                <p>基本的にはそのまま，/ʐuŋ/はゼロ声母になって/<span class="extletters">iŋ</span>/になります。例外として<span
+                                lang="zh">〈惹〉</span>は/<span class="extletters">∅</span>/~/ʐ/で揺れ，<span
+                                lang="zh">〈瑞〉</span>は/ʂue/になります。</p>
+                <h4>tɕ</h4>
                 <p>165字中150字がそのまま，<span lang="zh">〈己〉</span><span lang="zh">〈计〉</span><span lang="zh">〈饥〉</span><span
                                 lang="zh">〈记〉</span><span lang="zh">〈肌〉</span><span lang="zh">〈纪〉</span><span
                                 lang="zh">〈技〉</span><span lang="zh">〈忌〉</span><span lang="zh">〈际〉</span><span
                                 lang="zh">〈季〉</span><span lang="zh">〈既〉</span><span lang="zh">〈继〉</span><span
-                                lang="zh">〈基〉</span><span lang="zh">〈寄〉</span>が/<span
-                                class="extletters">ts</span>/に対応，普通話でも多音字である<span lang="zh">〈角〉</span>は/<span
-                                class="extletters">kɐʔ</span>入/または/<span
-                                class="extletters">tɕyɐʔ</span>入/です。なお，北京で/<span
-                                class="extletters">tɕi</span>/であって合肥で声母が/<span
-                                class="extletters">tɕ</span>/のままの12字はすべて入声字でした。</p>
-                <h4><span class="extletters">tɕʰ</span></h4>
-                <p><span lang="zh">〈敲〉</span>は/<span class="extletters">kʰɔ</span>/と/<span
-                                class="extletters">tɕʰiɔ</span>/とで揺れているようです。また，/<span
-                                class="extletters">tɕʰi</span>/は例外なく/<span
-                                class="extletters">tsʰɿ</span>/に対応しました。そのほかはすべてそのままです。</p>
-                <h4><span class="extletters">tɕ~tɕʰ</span></h4>
-                <p><span lang="zh">〈券〉</span>は，普通話では&lt;quàn&gt;であるところ，北京では/<span class="extletters">tɕ</span>/~/<span
-                                class="extletters">tɕʰ</span>/が揺れており，合肥では（普通話とは反対に）/<span
-                                class="extletters">tɕ</span>/でした。<span
+                                lang="zh">〈基〉</span><span lang="zh">〈寄〉</span>が/ts/に対応，普通話でも多音字である<span
+                                lang="zh">〈角〉</span>は/kɐʔ入/または/tɕyɐʔ入/です。なお，北京で/tɕi/であって合肥で声母が/tɕ/のままの12字はすべて入声字でした。</p>
+                <h4>tɕʰ</h4>
+                <p><span lang="zh">〈敲〉</span>は/kʰɔ/と/<span
+                                class="extletters">tɕʰiɔ</span>/とで揺れているようです。また，/tɕʰi/は例外なく/tsʰɿ/に対応しました。そのほかはすべてそのままです。
+                </p>
+                <h4>tɕ~tɕʰ</h4>
+                <p><span lang="zh">〈券〉</span>は，普通話では&lt;quàn&gt;であるところ，北京では/tɕ/~/tɕʰ/が揺れており，合肥では（普通話とは反対に）/tɕ/でした。<span
                                 lang="zh">〈强〉</span>は，普通話でも北京でも合肥でも多音字で，一般的な対応に従っていました（多音字は揺れとは異なるので，同一の見出しの中に書くのは不適切ですが，参照データベースの中では区別できないのでこのような書き方を取っています）。
                 </p>
-                <h4><span class="extletters">ɕ</span></h4>
-                <p>大まかにいって，舒声の/<span class="extletters">ɕi</span>/と/<span class="extletters">ɕie</span>/は/<span
-                                class="extletters">s</span>/に対応し，そのほかはそのままでした。ただし，<span lang="zh">〈虾〉</span><span
-                                lang="zh">〈卸〉</span><span lang="zh">〈斜〉</span><span
+                <h4>ɕ</h4>
+                <p>大まかにいって，舒声の/ɕi/と/ɕie/は/<span class="extletters">s</span>/に対応し，そのほかはそのままでした。ただし，<span
+                                lang="zh">〈虾〉</span><span lang="zh">〈卸〉</span><span lang="zh">〈斜〉</span><span
                                 lang="zh">〈霞〉</span>は舒声ながらもそのままで，<span lang="zh">〈写〉</span>と<span
-                                lang="zh">〈谢〉</span>は揺れていました。<span lang="zh">〈寻〉</span>は/<span
-                                class="extletters">ɕin</span>陽平/<span class="extletters">と</span>/<span
+                                lang="zh">〈谢〉</span>は揺れていました。<span lang="zh">〈寻〉</span>は/ɕin陽平/と/<span
                                 class="extletters">tɕʰ</span>陽平/とがあり，<span lang="zh">〈详〉</span>と<span
-                                lang="zh">〈祥〉</span>は/<span class="extletters">tɕʰiɑ̃</span>/でした。</p>
-                <h4><span class="extletters">k</span></h4>
-                <p>80字中79字はそのままでした。<span lang="zh">〈果〉</span>が/<span
-                                class="extletters">lʊ</span>/上になっているのですが，少し奇妙ですし，kとlはキーボード上で隣接しているので，タイポだと思います。</p>
-                <h4><span class="extletters">k~tɕ</span></h4>
+                                lang="zh">〈祥〉</span>は/tɕʰiɑ̃/でした。</p>
+                <h4>k</h4>
+                <p>80字中79字はそのままでした。<span lang="zh">〈果〉</span>が/lʊ/上になっているのですが，少し奇妙ですし，kとlはキーボード上で隣接しているので，タイポだと思います。</p>
+                <h4>k~tɕ</h4>
                 <p><span lang="zh">〈刚〉</span>は北京，合肥ともに上記の揺れがあります。</p>
-                <h4><span class="extletters">kʰ</span></h4>
+                <h4>kʰ</h4>
                 <p>すべてそのままでした。</p>
-                <h4><span class="extletters">x</span></h4>
+                <h4>x</h4>
                 <p>すべてそのままでした。</p>
-                <h4><span class="extletters">∅</span></h4>
+                <h4>∅</h4>
                 <p>216字中201字がそのまま，<span lang="zh">〈安〉</span><span lang="zh">〈昂〉</span><span lang="zh">〈岸〉</span><span
                                 lang="zh">〈按〉</span><span lang="zh">〈哀〉</span><span lang="zh">〈袄〉</span><span
                                 lang="zh">〈恩〉</span><span lang="zh">〈爱〉</span><span lang="zh">〈案〉</span><span
                                 lang="zh">〈偶〉</span><span lang="zh">〈傲〉</span><span lang="zh">〈碍〉</span><span
-                                lang="zh">〈矮〉</span><span lang="zh">〈额〉</span>が/<span
-                                class="extletters">ʐ</span>/に対応します。</p>
+                                lang="zh">〈矮〉</span><span lang="zh">〈额〉</span>が/ʐ/に対応します。</p>
                 <h3>結果（韻母）</h3>
                 <p>疲れましたがここからが本番，韻母です。とはいっても，韻母は少し複雑すぎるので，また声母の揺れに起因する介音の有無の差異も無視することにします。実は韻母を少しやったところで挫折して後日やり直しているので，再び挫折することのないようなるべく手順を簡略化したかったのです。原則がどれほど一般的かも声母編ではn字中n字という形で示していましたが，面倒くさいので途中から省略しています。学術的な文章ではないのでご容赦ください。
                 </p>
-                <h4><span class="extletters">a</span></h4>
-                <p>舒声は/<span class="extletters">a</span>/に，入声は/<span class="extletters">ɐʔ</span>/に対応します。</p>
-                <h4><span class="extletters">ai</span></h4>
-                <p>舒声は/<span class="extletters">ᴇ</span>/に，入声は/<span class="extletters">ɐʔ</span>/に対応します。<span
-                                lang="zh">〈塞〉</span><span lang="zh">〈伯〉</span><span lang="zh">〈迫〉</span><span
-                                lang="zh">〈脉〉</span>は，普通話では複数の読みがありますが，合肥の韻母はすべて/<span class="extletters">ɐʔ</span>入/です。
+                <h4>a</h4>
+                <p>舒声は/a/に，入声は/ɐʔ/に対応します。</p>
+                <h4>ai</h4>
+                <p>舒声は/ᴇ/に，入声は/ɐʔ/に対応します。<span lang="zh">〈塞〉</span><span lang="zh">〈伯〉</span><span
+                                lang="zh">〈迫〉</span><span lang="zh">〈脉〉</span>は，普通話では複数の読みがありますが，合肥の韻母はすべて/ɐʔ入/です。
                 </p>
-                <h4><span class="extletters">au</span></h4>
-                <p>原則として舒声は/<span class="extletters">ɔ</span>/に，入声は/<span class="extletters">uɐʔ</span>/に対応しますが，<span
-                                lang="zh">〈造〉</span>は/<span class="extletters">au</span>/，<span
-                                lang="zh">〈高〉</span>は/<span class="extletters">æ</span>/です。</p>
-                <h4><span class="extletters">an</span></h4>
-                <p>105字中83字は/<span class="extletters">æ̃</span>/に対応します。一部のそり舌音の字，すなわち，<span lang="zh">〈占〉</span><span
-                                lang="zh">〈闪〉</span><span lang="zh">〈沾〉</span><span lang="zh">〈陕〉</span><span
-                                lang="zh">〈战〉</span><span lang="zh">〈染〉</span><span lang="zh">〈展〉</span><span
-                                lang="zh">〈粘〉</span><span lang="zh">〈然〉</span><span lang="zh">〈善〉</span><span
-                                lang="zh">〈缠〉</span><span lang="zh">〈燃〉</span>は，/<span
-                                class="extletters">ən</span>/と/<span class="extletters">æ̃</span>/とで揺れがあります。<span
+                <h4>au</h4>
+                <p>原則として舒声は/ɔ/に，入声は/uɐʔ/に対応しますが，<span lang="zh">〈造〉</span>は/au/，<span lang="zh">〈高〉</span>は/æ/です。</p>
+                <h4>an</h4>
+                <p>105字中83字は/æ̃/に対応します。一部のそり舌音の字，すなわち，<span lang="zh">〈占〉</span><span lang="zh">〈闪〉</span><span
+                                lang="zh">〈沾〉</span><span lang="zh">〈陕〉</span><span lang="zh">〈战〉</span><span
+                                lang="zh">〈染〉</span><span lang="zh">〈展〉</span><span lang="zh">〈粘〉</span><span
+                                lang="zh">〈然〉</span><span lang="zh">〈善〉</span><span lang="zh">〈缠〉</span><span
+                                lang="zh">〈燃〉</span>は，/<span class="extletters">ən</span>/と/æ̃/とで揺れがあります。<span
                                 lang="zh">〈犯〉</span>は/fan去/のままです。一部の唇音の字，すなわち，<span lang="zh">〈半〉</span><span
                                 lang="zh">〈伴〉</span><span lang="zh">〈判〉</span><span lang="zh">〈盘〉</span><span
-                                lang="zh">〈满〉</span><span lang="zh">〈瞒〉</span>は/<span
-                                class="extletters">ʊ̃</span>/に対応し，<span lang="zh">〈漫〉</span>は/<span
-                                class="extletters">mʊ̃</span>/と/<span class="extletters">mæ̃</span>/とで揺れます。</p>
-                <h4><span class="extletters">aŋ</span></h4>
-                <p>/<span class="extletters">ɑ̃</span>/に対応します。</p>
-                <h4><span class="extletters">ia</span></h4>
-                <p>舒声は/<span class="extletters">ia</span>/のまま，入声は/<span class="extletters">iɐʔ</span>/です。</p>
-                <h4><span class="extletters">iau</span></h4>
-                <p>基本的には/<span class="extletters">iɔ</span>/になりますが，<span lang="zh">〈钓〉</span>は/<span
-                                class="extletters">tiɛ</span>/に，<span lang="zh">〈药〉</span>は/<span
-                                class="extletters">yɐʔ</span>/になります。
+                                lang="zh">〈满〉</span><span lang="zh">〈瞒〉</span>は/ʊ̃/に対応し，<span
+                                lang="zh">〈漫〉</span>は/mʊ̃/と/mæ̃/とで揺れます。</p>
+                <h4>aŋ</h4>
+                <p>/ɑ̃/に対応します。</p>
+                <h4>ia</h4>
+                <p>舒声は/ia/のまま，入声は/iɐʔ/です。</p>
+                <h4>iau</h4>
+                <p>基本的には/iɔ/になりますが，<span lang="zh">〈钓〉</span>は/<span class="extletters">tiɛ</span>/に，<span
+                                lang="zh">〈药〉</span>は/<span class="extletters">yɐʔ</span>/になります。
                 </p>
-                <h4><span class="extletters">iɛn</span></h4>
-                <p>100字中96字は/<span class="extletters">iɪ̃</span>/に，声母が/<span class="extletters">ɕ</span>/の字のうち，<span
-                                lang="zh">〈弦〉</span><span lang="zh">〈仙〉</span><span lang="zh">〈鲜〉</span>は/<span
-                                class="extletters">yɪ̃</span>/になり，<span lang="zh">〈先〉</span>は両者で揺れます。</p>
-                <h4><span class="extletters">iaŋ</span></h4>
-                <p>/<span class="extletters">iɑ̃</span>/に対応します。</p>
-                <h4><span class="extletters">ua</span></h4>
-                <p>舒声は/<span class="extletters">ua</span>/のまま，入声は/<span class="extletters">uɐʔ</span>/です。</p>
-                <h4><span class="extletters">uai</span></h4>
-                <p>原則として/<span class="extletters">uᴇ</span>/に対応しますが，外は/<span class="extletters">uᴇ</span>/~/<span
-                                class="extletters">ue</span>/で揺れます。</p>
-                <h4><span class="extletters">uan</span></h4>
-                <p>43字中34字はは/<span class="extletters">ʊ̃</span>/に，<span lang="zh">〈关〉</span><span
-                                lang="zh">〈环〉</span><span lang="zh">〈弯〉</span><span lang="zh">〈顽〉</span><span
-                                lang="zh">〈挽〉</span><span lang="zh">〈晚〉</span><span lang="zh">〈湾〉</span>は/<span
-                                class="extletters">uæ̃</span>/になり，<span lang="zh">〈玩〉</span>と<span
-                                lang="zh">〈还〉</span>は/<span class="extletters">ʊ̃</span>/~/<span
-                                class="extletters">uæ̃</span>/，<span lang="zh">〈软〉</span>は/<span
-                                class="extletters">ən</span>/~/<span class="extletters">ʊ̃</span>/で揺れます。</p>
-                <h4><span class="extletters">uaŋ</span></h4>
-                <p>/<span class="extletters">uɑ̃</span>/に対応します。</p>
-                <h4><span class="extletters">yan</span></h4>
-                <p>/<span class="extletters">yĩ</span>/に対応します。</p>
-                <h4><span class="extletters">ɤ</span></h4>
-                <p>原則として舒声は/<span class="extletters">ʊ</span>/に，入声は/<span class="extletters">ɐʔ</span>/に対応します。<span
-                                lang="zh">〈社〉</span><span lang="zh">〈舍〉</span><span lang="zh">〈遮〉</span>は/<span
-                                class="extletters">e</span>/になり，<span lang="zh">〈者〉</span>は/<span
-                                class="extletters">ᴇ</span>/になり，<span lang="zh">〈核〉</span>は/<span
-                                class="extletters">ᴇ</span>/~/<span class="extletters">ɐʔ</span>/で，<span
-                                lang="zh">〈惹〉</span>は/<span class="extletters">a</span>/~/<span
-                                class="extletters">e</span>/で揺れます。というか<span
+                <h4>iɛn</h4>
+                <p>100字中96字は/iɪ̃/に，声母が/ɕ/の字のうち，<span lang="zh">〈弦〉</span><span lang="zh">〈仙〉</span><span
+                                lang="zh">〈鲜〉</span>は/<span class="extletters">yɪ̃</span>/になり，<span
+                                lang="zh">〈先〉</span>は両者で揺れます。</p>
+                <h4>iaŋ</h4>
+                <p>/iɑ̃/に対応します。</p>
+                <h4>ua</h4>
+                <p>舒声は/ua/のまま，入声は/uɐʔ/です。</p>
+                <h4>uai</h4>
+                <p>原則として/uᴇ/に対応しますが，外は/uᴇ/~/<span class="extletters">ue</span>/で揺れます。</p>
+                <h4>uan</h4>
+                <p>43字中34字はは/ʊ̃/に，<span lang="zh">〈关〉</span><span lang="zh">〈环〉</span><span lang="zh">〈弯〉</span><span
+                                lang="zh">〈顽〉</span><span lang="zh">〈挽〉</span><span lang="zh">〈晚〉</span><span
+                                lang="zh">〈湾〉</span>は/<span class="extletters">uæ̃</span>/になり，<span
+                                lang="zh">〈玩〉</span>と<span lang="zh">〈还〉</span>は/ʊ̃/~/uæ̃/，<span
+                                lang="zh">〈软〉</span>は/ən/~/ʊ̃/で揺れます。</p>
+                <h4>uaŋ</h4>
+                <p>/uɑ̃/に対応します。</p>
+                <h4>yan</h4>
+                <p>/yĩ/に対応します。</p>
+                <h4>ɤ</h4>
+                <p>原則として舒声は/ʊ/に，入声は/ɐʔ/に対応します。<span lang="zh">〈社〉</span><span lang="zh">〈舍〉</span><span
+                                lang="zh">〈遮〉</span>は/<span class="extletters">e</span>/になり，<span
+                                lang="zh">〈者〉</span>は/<span class="extletters">ᴇ</span>/になり，<span
+                                lang="zh">〈核〉</span>は/<span class="extletters">ᴇ</span>/~/ɐʔ/で，<span
+                                lang="zh">〈惹〉</span>は/a/~/<span class="extletters">e</span>/で揺れます。というか<span
                                 lang="zh">〈惹〉</span>って本来入声字だと思うんですがここでは陰平になってるんですね。</p>
-                <h4><span class="extletters">o</span></h4>
-                <p>舒声は/<span class="extletters">ʊ</span>/に，入声は<span lang="zh">〈末〉</span><span lang="zh">〈驳〉</span><span
-                                lang="zh">〈拨〉</span><span lang="zh">〈柏〉</span><span lang="zh">〈博〉</span><span
-                                lang="zh">〈漠〉</span><span lang="zh">〈魄〉</span><span lang="zh">〈墨〉</span><span
-                                lang="zh">〈默〉</span>が/<span class="extletters">ɐʔ</span>/で，<span
-                                lang="zh">〈佛〉</span>が/<span class="extletters">əʔ</span>/です。</p>
-                <h4><span class="extletters">ei</span></h4>
-                <p>舒声は/<span class="extletters">e</span>/です。入声字は<span lang="zh">〈北〉</span>と<span
-                                lang="zh">〈黑〉</span>が/<span class="extletters">ɐʔ</span>/で，<span
-                                lang="zh">〈没〉</span>が/<span
-                                class="extletters">əʔ</span>/です。一応-kと-tで分かれる恰好になっていますけど例が少なすぎるので確かなことは言えません。<span
-                                lang="zh">〈妹〉</span>は/<span class="extletters">ɿ/~</span>/e/で揺れます。/<span
-                                class="extletters">mɿ</span>/とかいう音節許されるの……？</p>
-                <h4><span class="extletters">ou</span></h4>
-                <p>原則として/<span class="extletters">ɯ</span>/，<span lang="zh">〈否〉</span><span lang="zh">〈某〉</span><span
-                                lang="zh">〈谋〉</span>は/<span class="extletters">ʊ</span>/，入声の<span
-                                lang="zh">〈粥〉</span>は/<span class="extletters">uəʔ</span>/です。声母が唇音のとき，そしてそのときに限り/<span
-                                class="extletters">ʊ</span>/になっていますが，常用字の範囲では三例しかないので断定は尚早です。</p>
-                <h4><span class="extletters">ən</span></h4>
-                <p>すべて/<span class="extletters">ən</span>/のままです。</p>
-                <h4><span class="extletters">əŋ</span></h4>
-                <p>声母の唇音の17字すべてが/<span class="extletters">əŋ</span>/のままで，唇音以外の38字はすべて/<span
-                                class="extletters">ən</span>/に合流します。
+                <h4>o</h4>
+                <p>舒声は/ʊ/に，入声は<span lang="zh">〈末〉</span><span lang="zh">〈驳〉</span><span lang="zh">〈拨〉</span><span
+                                lang="zh">〈柏〉</span><span lang="zh">〈博〉</span><span lang="zh">〈漠〉</span><span
+                                lang="zh">〈魄〉</span><span lang="zh">〈墨〉</span><span lang="zh">〈默〉</span>が/ɐʔ/で，<span
+                                lang="zh">〈佛〉</span>が/əʔ/です。</p>
+                <h4>ei</h4>
+                <p>舒声は/e/です。入声字は<span lang="zh">〈北〉</span>と<span lang="zh">〈黑〉</span>が/ɐʔ/で，<span
+                                lang="zh">〈没〉</span>が/əʔ/です。一応-kと-tで分かれる恰好になっていますけど例が少なすぎるので確かなことは言えません。<span
+                                lang="zh">〈妹〉</span>は/ɿ/~/e/で揺れます。/<span class="extletters">mɿ</span>/とかいう音節許されるの……？</p>
+                <h4>ou</h4>
+                <p>原則として/ɯ/，<span lang="zh">〈否〉</span><span lang="zh">〈某〉</span><span lang="zh">〈谋〉</span>は/ʊ/，入声の<span
+                                lang="zh">〈粥〉</span>は/uəʔ/です。声母が唇音のとき，そしてそのときに限り/ʊ/になっていますが，常用字の範囲では三例しかないので断定は尚早です。</p>
+                <h4>ən</h4>
+                <p>すべて/ən/のままです。</p>
+                <h4>əŋ</h4>
+                <p>声母の唇音の17字すべてが/əŋ/のままで，唇音以外の38字はすべて/<span class="extletters">ən</span>/に合流します。
                 </p>
-                <h4><span class="extletters">ɚ</span></h4>
-                <p><span lang="zh">〈二〉</span><span lang="zh">〈耳〉</span><span lang="zh">〈而〉</span>の三字があり，すべて/<span
-                                class="extletters">a</span>/になります。合肥話では儿化は見られないそうです。</p>
-                <h4><span class="extletters">ie</span></h4>
+                <h4>ɚ</h4>
+                <p><span lang="zh">〈二〉</span><span lang="zh">〈耳〉</span><span
+                                lang="zh">〈而〉</span>の三字があり，すべて/a/になります。合肥話では儿化は見られないそうです。</p>
+                <h4>ie</h4>
                 <p>舒声では，<span lang="zh">〈也〉</span><span lang="zh">〈介〉</span><span lang="zh">〈阶〉</span><span
                                 lang="zh">〈戒〉</span><span lang="zh">〈皆〉</span><span lang="zh">〈界〉</span><span
-                                lang="zh">〈械〉</span><span lang="zh">〈街〉</span><span lang="zh">〈解〉</span>は/<span
-                                class="extletters">iᴇ</span>/になり，<span lang="zh">〈姐〉</span><span
-                                lang="zh">〈卸〉</span><span lang="zh">〈借〉</span><span lang="zh">〈野〉</span><span
-                                lang="zh">〈斜〉</span>は/<span class="extletters">i</span>/になり，<span
-                                lang="zh">〈且〉</span>は/<span class="extletters">ie</span>/になります。なんか<span
-                                lang="zh">〈借〉</span>が舒声になってるな。<span lang="zh">〈爹〉</span>は/<span
-                                class="extletters">te</span>/~/<span class="extletters">ti</span>/で揺れ，声母でも言及した通り<span
-                                lang="zh">〈写〉</span>と<span lang="zh">〈谢〉</span>は/<span
-                                class="extletters">se</span>/~/<span class="extletters">ɕi</span>/で揺れ，<span
-                                lang="zh">〈夜〉</span>は/<span class="extletters">ɿ/~</span>/i/で揺れます。多種多様すぎて目が回りそうですが，<span
-                                lang="zh">〈也〉</span>と<span lang="zh">〈借〉</span>を除いては/<span
-                                class="extletters">iᴇ</span>/は日本語の/<span class="extletters">ai</span>/に，/<span
-                                class="extletters">ie</span>/は日本語の/<span
-                                class="extletters">ja</span>/に対応するような気がするので，もっと多くの字を調べて切韻と比較すれば何か見出せるかもしれません。入声は原則として/<span
-                                class="extletters">iɐʔ</span>/になり，<span lang="zh">〈没〉</span>一字のみ/<span
-                                class="extletters">iəʔ</span>/になります。</p>
-                <h4><span class="extletters">iou</span></h4>
-                <p>原則として/<span class="extletters">iɯ</span>/に対応し，入声の<span lang="zh">〈六〉</span>は/<span
-                                class="extletters">uəʔ</span>/です。<span lang="zh">〈扭〉</span>は/<span
-                                class="extletters">liɯ</span>/~/<span class="extletters">ʈʂɯ</span>/です。</p>
-                <h4><span class="extletters">in</span></h4>
-                <p>すべて/<span class="extletters">in</span>/のままです。</p>
-                <h4><span class="extletters">iŋ</span></h4>
-                <p>原則として/<span class="extletters">in</span>/に合流し，<span lang="zh">〈明〉</span>は/<span
-                                class="extletters">in</span>/~/<span class="extletters">ən</span>/で揺れます。</p>
-                <h4><span class="extletters">uo</span></h4>
-                <p>すべて/<span class="extletters">ʊ</span>/になります。</p>
-                <h4><span class="extletters">uei</span></h4>
-                <p>原則として/<span class="extletters">ue</span>/，〈<span lang="zh">队</span>〉〈<span lang="zh">对</span>〉〈<span
-                                lang="zh">岁</span>〉〈<span lang="zh">虽</span>〉〈<span lang="zh">退</span>〉〈<span
-                                lang="zh">脆</span>〉〈<span lang="zh">堆</span>〉〈<span lang="zh">随</span>〉〈<span
-                                lang="zh">最</span>〉〈<span lang="zh">碎</span>〉〈<span lang="zh">罪</span>〉〈<span
-                                lang="zh">催</span>〉〈<span lang="zh">腿</span>〉〈<span lang="zh">穗</span>〉は/<span
-                                class="extletters">e</span>/，〈<span lang="zh">醉</span>〉は/<span
-                                class="extletters">ei</span>/です。</p>
-                <h4><span class="extletters">uən</span></h4>
-                <p>声母がゼロ声母と軟口蓋音，/<span class="extletters">ʐ</span>/以外のそり舌音のときは/<span
-                                class="extletters">uən</span>/のまま，歯茎音と/<span class="extletters">ʐ</span>/のときは/<span
-                                class="extletters">ən</span>/です。ただし，/<span class="extletters">ʐuən</span>/は<span
+                                lang="zh">〈械〉</span><span lang="zh">〈街〉</span><span lang="zh">〈解〉</span>は/iᴇ/になり，<span
+                                lang="zh">〈姐〉</span><span lang="zh">〈卸〉</span><span lang="zh">〈借〉</span><span
+                                lang="zh">〈野〉</span><span lang="zh">〈斜〉</span>は/i/になり，<span
+                                lang="zh">〈且〉</span>は/ie/になります。なんか<span lang="zh">〈借〉</span>が舒声になってるな。<span
+                                lang="zh">〈爹〉</span>は/te/~/ti/で揺れ，声母でも言及した通り<span lang="zh">〈写〉</span>と<span
+                                lang="zh">〈谢〉</span>は/<span class="extletters">se</span>/~/ɕi/で揺れ，<span
+                                lang="zh">〈夜〉</span>は/ɿ/~/i/で揺れます。多種多様すぎて目が回りそうですが，<span lang="zh">〈也〉</span>と<span
+                                lang="zh">〈借〉</span>を除いては/<span
+                                class="extletters">iᴇ</span>/は日本語の/ai/に，/ie/は日本語の/ja/に対応するような気がするので，もっと多くの字を調べて切韻と比較すれば何か見出せるかもしれません。入声は原則として/iɐʔ/になり，<span
+                                lang="zh">〈没〉</span>一字のみ/iəʔ/になります。</p>
+                <h4>iou</h4>
+                <p>原則として/iɯ/に対応し，入声の<span lang="zh">〈六〉</span>は/<span class="extletters">uəʔ</span>/です。<span
+                                lang="zh">〈扭〉</span>は/<span class="extletters">liɯ</span>/~/ʈʂɯ/です。</p>
+                <h4>in</h4>
+                <p>すべて/in/のままです。</p>
+                <h4>iŋ</h4>
+                <p>原則として/in/に合流し，<span lang="zh">〈明〉</span>は/<span class="extletters">in</span>/~/ən/で揺れます。</p>
+                <h4>uo</h4>
+                <p>すべて/ʊ/になります。</p>
+                <h4>uei</h4>
+                <p>原則として/ue/，〈<span lang="zh">队</span>〉〈<span lang="zh">对</span>〉〈<span lang="zh">岁</span>〉〈<span
+                                lang="zh">虽</span>〉〈<span lang="zh">退</span>〉〈<span lang="zh">脆</span>〉〈<span
+                                lang="zh">堆</span>〉〈<span lang="zh">随</span>〉〈<span lang="zh">最</span>〉〈<span
+                                lang="zh">碎</span>〉〈<span lang="zh">罪</span>〉〈<span lang="zh">催</span>〉〈<span
+                                lang="zh">腿</span>〉〈<span lang="zh">穗</span>〉は/<span class="extletters">e</span>/，〈<span
+                                lang="zh">醉</span>〉は/<span class="extletters">ei</span>/です。</p>
+                <h4>uən</h4>
+                <p>声母がゼロ声母と軟口蓋音，/ʐ/以外のそり舌音のときは/<span
+                                class="extletters">uən</span>/のまま，歯茎音と/ʐ/のときは/ən/です。ただし，/ʐuən/は<span
                                 lang="zh">〈润〉</span>一字しかなかったため，より広汎に調べれば異なる結果が出るかもしれません。</p>
-                <h4><span class="extletters">u(ə)ŋ</span></h4>
-                <p>声母が北京で/<span class="extletters">ʐ</span>/，合肥で/<span class="extletters">∅</span>/のとき/<span
-                                class="extletters">iŋ</span>/で，それ以外のときは/<span class="extletters">əŋ</span>/です。</p>
-                <h4><span class="extletters">ye</span></h4>
-                <p>すべて入声字で，/<span class="extletters">ɐʔ</span>/に対応します。</p>
-                <h4><span class="extletters">yn</span></h4>
-                <p>基本的に/<span class="extletters">yn</span>/のままですが，<span lang="zh">〈寻〉</span>は/<span
-                                class="extletters">in</span>/になります。</p>
-                <h4><span class="extletters">i</span></h4>
-                <p>舒声字は原則として/<span class="extletters">ɿ</span>/になり，<span lang="zh">〈你〉</span>が/<span
-                                class="extletters">li</span>/に，<span lang="zh">〈币〉</span>が/<span
-                                class="extletters">pe</span>/になり，<span lang="zh">〈闭〉</span>は/<span
-                                class="extletters">pe</span>/~/<span
-                                class="extletters">pɿ</span>/で揺れます。歯茎硬口蓋音が歯茎音に合流することにも留意してください。入声字は，<span
-                                lang="zh">〈役〉</span>と<span lang="zh">〈疫〉</span>が/<span
-                                class="extletters">yəʔ</span>/に，他が/<span class="extletters">iəʔ</span>/になります。<span
+                <h4>u(ə)ŋ</h4>
+                <p>声母が北京で/ʐ/，合肥で/∅/のとき/<span class="extletters">iŋ</span>/で，それ以外のときは/əŋ/です。</p>
+                <h4>ye</h4>
+                <p>すべて入声字で，/ɐʔ/に対応します。</p>
+                <h4>yn</h4>
+                <p>基本的に/yn/のままですが，<span lang="zh">〈寻〉</span>は/<span class="extletters">in</span>/になります。</p>
+                <h4>i</h4>
+                <p>舒声字は原則として/ɿ/になり，<span lang="zh">〈你〉</span>が/<span class="extletters">li</span>/に，<span
+                                lang="zh">〈币〉</span>が/<span class="extletters">pe</span>/になり，<span
+                                lang="zh">〈闭〉</span>は/<span
+                                class="extletters">pe</span>/~/pɿ/で揺れます。歯茎硬口蓋音が歯茎音に合流することにも留意してください。入声字は，<span
+                                lang="zh">〈役〉</span>と<span lang="zh">〈疫〉</span>が/yəʔ/に，他が/iəʔ/になります。<span
                                 lang="zh">〈匹〉</span>と<span lang="zh">〈翼〉</span>は/<span
-                                class="extletters">iəʔ</span>/~/<span class="extletters">ɿ</span>/で揺れます。</p>
-                <h4><span class="extletters">ɿ，ʅ</span></h4>
-                <p>舒声は原則としてそのままです。<span lang="zh">〈使〉</span>と<span lang="zh">〈蜘〉</span>は/<span
-                                class="extletters">ʅ/~</span>/e/で揺れます。入声は/<span class="extletters">əʔ</span>/になります。</p>
-                <h4><span class="extletters">u</span></h4>
-                <p>舒声は原則として/<span class="extletters">u</span>/で，<span lang="zh">〈初〉</span><span
-                                lang="zh">〈础〉</span><span lang="zh">〈梳〉</span><span lang="zh">〈锄〉</span><span
-                                lang="zh">〈墓〉</span><span lang="zh">〈幕〉</span><span lang="zh">〈楚〉</span><span
-                                lang="zh">〈数〉</span><span lang="zh">〈慕〉</span><span lang="zh">〈暮〉</span>は/<span
-                                class="extletters">ʊ</span>/，<span lang="zh">〈母〉</span>は/<span
-                                class="extletters">əŋ</span>/~/<span class="extletters">ʊ</span>/です。入声は唇音が/<span
-                                class="extletters">əʔ</span>/，そのほかは/<span class="extletters">uɐʔ</span>/です。</p>
-                <h4><span class="extletters">y</span></h4>
-                <p>舒声は/<span class="extletters">y</span>/のまま，入声は/<span class="extletters">yəʔ</span>/で，<span
-                                lang="zh">〈玉〉</span>は/<span class="extletters">y</span>/~/<span
-                                class="extletters">yəʔ</span>/です。</p>
+                                class="extletters">iəʔ</span>/~/ɿ/で揺れます。</p>
+                <h4>ɿ，ʅ</h4>
+                <p>舒声は原則としてそのままです。<span lang="zh">〈使〉</span>と<span lang="zh">〈蜘〉</span>は/ʅ/~/e/で揺れます。入声は/əʔ/になります。</p>
+                <h4>u</h4>
+                <p>舒声は原則として/u/で，<span lang="zh">〈初〉</span><span lang="zh">〈础〉</span><span lang="zh">〈梳〉</span><span
+                                lang="zh">〈锄〉</span><span lang="zh">〈墓〉</span><span lang="zh">〈幕〉</span><span
+                                lang="zh">〈楚〉</span><span lang="zh">〈数〉</span><span lang="zh">〈慕〉</span><span
+                                lang="zh">〈暮〉</span>は/<span class="extletters">ʊ</span>/，<span
+                                lang="zh">〈母〉</span>は/<span class="extletters">əŋ</span>/~/ʊ/です。入声は唇音が/əʔ/，そのほかは/uɐʔ/です。
+                </p>
+                <h4>y</h4>
+                <p>舒声は/y/のまま，入声は/yəʔ/で，<span lang="zh">〈玉〉</span>は/y/~/<span class="extletters">yəʔ</span>/です。</p>
                 <h3>表</h3>
                 <p>このまま終わらせるのも尻切れとんぼですし，割と見にくいので，取り敢えず法則の部分だけでも表にしてまとめて終わりにしようと思います。まずは声母から。三字以上にあてはまる例のあった対応を書き出しています。上（色付き）が北京語／普通話，下（色なし）が合肥話です。
                 </p>

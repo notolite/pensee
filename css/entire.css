@@ -15,11 +15,25 @@ h3 {
 }
 
 p,
-ul li {
+ul li,
+dl {
     font-weight: 300;
     text-align: justify;
     margin: 1rem 0;
     line-height: 3rem;
+}
+
+strong {
+    font-weight: 500;
+}
+
+dt,
+dd {
+    display: inline-block;
+}
+
+dt {
+    width: 5rem;
 }
 
 *[lang="jp"],
@@ -38,22 +52,21 @@ ul li {
     font-family: 'Zilla Slab', serif;
 }
 
-.extletters {
-    font-family: 'Noto Sans', sans-serif;
-}
-
 article a,
 footer a {
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    border-bottom: steelblue 1.6px solid;
+    position: relative;
+    border-bottom: 1.6px steelblue dotted;
+    line-height: 1.5;
 }
 
 article a:hover,
 footer a :hover {
     color: steelblue;
     font-weight: 500;
+    border-bottom: 1.4px solid;
 }
 
 a sup {
@@ -112,7 +125,7 @@ i {
 
 @media screen and (max-width:480px) {
     header {
-        height: 50vh;
+        height: 25vh;
         background: #222;
         color: white;
         position: relative;
@@ -124,9 +137,9 @@ i {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 10vw;
+        font-size: 6vw;
         text-align: center;
-        line-height: 4rem;
+        line-height: 3rem;
     }
 
     .subtitle {
