@@ -4,7 +4,7 @@
 <head>
     <meta lang="ja">
     <meta charset="utf-8" />
-    <title>『分韻撮要』音系と中古音の対応関係（隋拼版） | les impressions et les expressions</title>
+    <title>広州音と中古音の韻母の対応関係（隋拼版） | les impressions et les expressions</title>
     <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
     <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -18,9 +18,9 @@
     <meta name="twitter:site" content="@notolytos" />
     <meta property="og:image" content="https://notolyte.github.io/pensee/files/card.png" />
     <meta property="og:url" content="https://notolyte.github.io/pensee/articles/052.htm" />
-    <meta property="og:title" content="『分韻撮要』音系と中古音の対応関係（隋拼版） | les impressions et les expressions" />
+    <meta property="og:title" content="広州音と中古音の韻母の対応関係（隋拼版） | les impressions et les expressions" />
     <meta property="og:description"
-        content="通 yoŋ, {y,u}uŋ > ung 江 rong > ong /{p,k}_ rong > oeng / t_ 止 {r,∅}ui > i yui, {r,∅}yi > eoi /t_ {r,∅}yi > ai /k_  遇 {i,y}o > u /p_ {i,y}o > o /c_ {i,y}o > yu /!{p,c}_ o > ∅ /ŋ_ o > u /!{ŋ}" />
+        content="今回は，広東語の韻母についてもっと詳しくなろうと，切韻音系自動推導器にある推導廣州音の規則を読んでみることにしました。ただし，元サイトの規則がjavascriptで書いてあること，また変数名に伝統的な用語が用いられており親しみにくいことから，" />
 </head>
 
 <body>
@@ -28,33 +28,182 @@
         <h1>les impressions et les expressions</h1>
     </header>
     <article lang="jp">
-        <h2 data-num="051">『分韻撮要』音系と中古音の対応関係（隋拼版）</h2>
-        <div class="subtitle">Le système phonologique du <i>fanwancyutjiu</i> et ceux du chinois médiéval</div>
-        <div class="data">note récrite, 24 février 2023</div>
-        <p>通<br>yoŋ, {y,u}uŋ > ung<br>江<br>rong > ong /{p,k}_<br>rong > oeng / t_<br>止<br>{r,∅}ui > i<br>yui, {r,∅}yi >
-            eoi
-            /t_<br>{r,∅}yi > ai /k_<br><br>遇<br>{i,y}o > u /p_<br>{i,y}o > o /c_<br>{i,y}o > yu /!{p,c}_<br>o > ∅
-            /ŋ_<br>o > u
-            /!{ŋ}<br><br>蟹<br>{u,∅}ei > ai<br>{r,∅}iei > ai<br>{r,∅}yei > eoi /{t,j}_<br>{r,∅}yei > ai /k_<br>ai > ui
-            /p_<br>ai >
-            aai /{t,l}_<br>ai > oi /{c,k}_<br>uai > eoi /t_<br>uai > oi /ŋ_<br>uai > ui /k_<br>r{u,∅}e{i,∅}, r{u,∅}ai >
-            aai<br>ui >
-            oi /ŋ_<br>ui > ui<br>əi > oi<br>yoi > ai<br><br>臻<br>{r,∅}in > an<br>ryn > eon /t_<br>ryn > an /k_<br>yun,
-            iən >
-            an<br>ian > in /!p_<br>yon > yun /!p_<br>yon > aan /p_<br>un > un /p_<br>un > eon /{t,l}_<br>un > yun
-            /c_<br>un > an
-            /k_<br>ən > an<br><br>山<br>an > un /p_<br>an > aan /t_<br>an > on /k_<br>uan > yun /t_<br>uan > un
-            /k_<br>r{u,∅}an,
-            r{u,∅}en > aan<br>{r,∅}{i,∅}en > in<br>{r,∅}{u,y}en > yun<br><br>效<br>{r,∅}{i,∅}eu > iu<br>rau > aau<br>au >
-            u<br><br>果假<br>{u,∅}a > o<br>{i,y}a > e<br>r{u,∅}a > aa<br><br>宕<br>iaŋ > ong /{p,c}_<br>iaŋ > oeng
-            /!{p,c}_<br>yaŋ >
-            ong<br>aŋ > ong<br><br>梗<br>r{u,∅}aŋ > ang<br>r{i,y}eŋ > ing<br>r{u,∅}eŋ > ang<br>{i,u,y,∅}eŋ >
-            ing<br><br>曾<br>{ry,i}əŋ
-            > ing<br>{u,∅}əŋ > ang<br><br>流<br>{r,∅}iu, yu, u > au<br><br>深<br>{r,∅}im > am<br><br>咸<br>əm > aam
-            /t_<br>əm > om
-            /k_<br>am > aam /{p,t}_<br>am > om /k_<br>{r,∅}iem, em, iam > im<br>rem, ram, yom > aam<br></p>
-        <p>元データ：<a href="https://ayaka.shn.hk/fanwan/">https://ayaka.shn.hk/fanwan/</a></p>
-        <p>隋拼参考：<a href="https://sozysozbot.github.io/zyegnio_xrynmu/">https://sozysozbot.github.io/zyegnio_xrynmu/</a>
+        <h2 data-num="051">広州音と中古音の韻母の対応関係（隋拼版）</h2>
+        <div class="subtitle">Les rimes du canton et ceux du chinois médiéval</div>
+        <div class="data">originel, 25 février 2023</div>
+        <div class="data">corrigé, 26 février 2023</div>
+        <p>今回は，広東語の韻母についてもっと詳しくなろうと，<a
+                href="https://nk2028.shn.hk/qieyun-autoderiver/">切韻音系自動推導器</a>にある推導廣州音の規則を読んでみることにしました。ただし，元サイトの規則がjavascriptで書いてあること，また変数名に伝統的な用語が用いられており親しみにくいことから，これをMagnezone462さんの隋拼に直してまとめてみます。なお，隋拼についてははすじょい（sozysozbot）さんの<a
+                href="https://sozysozbot.github.io/zyegnio_xrynmu/">隋語韻母表</a>を参考にしました。広州音については，元サイトに倣って粵拼で表記してあります。</p>
+        <p>（改訂について）この記事は2023年3月25日に「『分韻撮要』と中古音の対応関係（隋拼版）」として公開されましたが，『分韻撮要』と実際の広州音には仮があり，『分韻撮要』の音系は現代からすると雲をつかむような存在であるため，広州音との関係を記すに改め，同時に説明を加えて再投稿されました。
+        </p>
+        <h4>記号一覧</h4>
+        <dl>
+            <dt>P</dt>
+            <dd>p類</dd>
+        </dl>
+        <dl>
+            <dt>K</dt>
+            <dd>k類</dd>
+        </dl>
+        <dl>
+            <dt>Q</dt>
+            <dd>q類</dd>
+        </dl>
+        <dl>
+            <dt>S</dt>
+            <dd>s類</dd>
+        </dl>
+        <dl>
+            <dt>Sr</dt>
+            <dd>sr類</dd>
+        </dl>
+        <dl>
+            <dt>T</dt>
+            <dd>t類</dd>
+        </dl>
+        <dl>
+            <dt>Tr</dt>
+            <dd>tr類</dd>
+        </dl>
+        <dl>
+            <dt>Tь</dt>
+            <dd>tь類</dd>
+        </dl>
+        <dl>
+            <dt>T'</dt>
+            <dd>t類およびtr類</dd>
+        </dl>
+        <dl>
+            <dt>S'</dt>
+            <dd>s類，sr類および<em>tь類</em></dd>
+        </dl>
+        <dl>
+            <dt>D</dt>
+            <dd>T',S'およびnь,l</dd>
+        </dl>
+        <h4>通</h4>
+        <p>yoŋ, {y,u}uŋ > ung</p>
+
+        <h4>江</h4>
+        <p>rong > ong /{P,K,Q}_
+        <p>rong > oeng / D_
+
+        <h4>止</h4>
+        <p>iə{i,∅}, ri > ei /{P,T,l,k,kh,g,qh,x}_</p>
+        <p>iə{i,∅}, ri > i /{Tr,Tь,S',ng,q,xь,j}_</p>
+
+        <p>yui, ryi > ei /P_</p>
+        <p>yui, ryi > eoi /{S',T',l}_</p>
+        <p>yui, ryi > ai /{K,Q}_</p>
+
+        <h4>遇</h4>
+        <p>{i,y}o > u /{p,ph,b}_</p>
+        <p>{i,y}o > ou /m_</p>
+        <p>{i,y}o > eoi /{T,l,nr,S}_</p>
+        <p>{i,y}o > o /Sr_</p>
+        <p>{i,y}o > yu /{Tь,tr,thr,dr,nь}_</p>
+
+        <p>o > ∅ /ŋ_</p>
+        <p>o > ou /D_</p>
+        <p>o > ou /{K,Q}_</p>
+
+        <h4>蟹</h4>
+        <p>{u,∅}ei > ai</p>
+
+        <p>{r,∅}iei > ai</p>
+        <p>{r,∅}yei > eoi /{D,j}_</p>
+        <p>{r,∅}yei > ai /{P,K,Q}_</p>
+
+        <p>ai > ui /P_</p>
+        <p>ai > aai /{Sr,Tь,T',nь,l}_</p>
+        <p>ai > oi /{S,K,Q}_</p>
+
+        <p>uai > eoi /D_</p>
+        <p>uai > oi /ŋ_</p>
+        <p>uai > ui /{k,kh,g,Q}_</p>
+
+        <p>r{u,∅}e{i,∅}, r{u,∅}ai > aai</p>
+        <p>re{i,∅}, rai > aai</p>
+        <p>rue{i,∅}, ruai > eoi /D_</p>
+        <p>rue{i,∅}, ruai > aai /{P,K,Q}_</p>
+
+        <p>ui > eoi /D_</p>
+        <p>ui > o /ŋ_</p>
+        <p>ui > ui /{P,Q,k,kh,g}</p>
+
+        <p>əi > oi</p>
+        <p>yoi > ai</p>
+
+        <h4>臻</h4>
+        <p>{r,∅}in > an</p>
+
+        <p>ryn > eon /D_</p>
+        <p>ryn > an /{P,K,Q}_</p>
+
+        <p>yun, iən > an</p>
+
+        <p>ian > in</p>
+        <p>yon > aan /P_</p>
+        <p>yon > yun /{K,Q}_</p>
+
+        <p>un > un /P_</p>
+        <p>un > eon /{T,l}_</p>
+        <p>un > yun /S_</p>
+        <p>un > an /{K,Q}_</p>
+        <p>ən > an</p>
+
+        <h4>山</h4>
+        <p>an > un /P_</p>
+        <p>an > aan /D_</p>
+        <p>an > on /{K,Q}_</p>
+        <p>uan > yun /D_</p>
+        <p>uan > un /{K,Q}_</p>
+
+        <p>r{u,∅}an, r{u,∅}en > aan</p>
+
+        <p>{r,∅}{i,∅}en > in</p>
+        <p>{r,∅}{u,y}en > yun</p>
+
+        <h4>效</h4>
+        <p>{r,∅}{i,∅}eu > iu</p>
+        <p>rau > aau</p>
+        <p>au > ou</p>
+
+        <h4>果假</h4>
+        <p>{u,∅}a > o</p>
+        <p>ia > e</p>
+        <p>ya > oe</p>
+        <p>r{u,∅}a > aa</p>
+
+        <h4>宕</h4>
+        <p>iaŋ > ong /{P,Sr}_</p>
+        <p>iaŋ > oeng /{T',S,Tь,nь,l,K,Q}_</p>
+        <p>yaŋ > ong</p>
+        <p>aŋ > ong</p>
+
+        <h4>梗</h4>
+        <p>r{u,∅}aŋ > ang</p>
+        <p>r{i,y}eŋ > ing</p>
+        <p>r{u,∅}eŋ > ang</p>
+        <p>{i,u,y,∅}eŋ > ing</p>
+
+        <h4>曾</h4>
+        <p>{ry,i}əŋ > ing</p>
+        <p>{u,∅}əŋ > ang</p>
+
+        <h4>流</h4>
+        <p>{r,∅}iu, yu, u > au</p>
+
+        <h4>深</h4>
+        <p>{r,∅}im > am</p>
+
+        <h4>咸</h4>
+        <p>əm > om > am /{K,Q}_</p>
+        <p>am > aam /{P,D}_</p>
+        <p>{r,∅}iem, em, iam > im</p>
+        <p>rem, ram, yom > aam</p>
+
         </p>
     </article>
     <footer>
