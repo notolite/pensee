@@ -63,6 +63,7 @@ p[lang="ru"] rt {
     color: steelblue;
 }
 
+
 section {
     margin: 2rem 0;
 }
@@ -271,6 +272,13 @@ rt {
     .code p {
         white-space: nowrap;
         width: 100%;
+    }
+
+    *[lang="en"] p,
+    *[lang="fr"] p,
+    *[lang="eu"] p,
+    *[lang="tp"] p {
+        line-height: 2rem;
     }
 
     #returnkey {
