@@ -45,6 +45,10 @@ dt {
     font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
 }
 
+*[lang="zh-tw"] {
+    font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
+}
+
 *[lang="en"],
 *[lang="fr"],
 *[lang="tp"],
