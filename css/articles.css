@@ -231,6 +231,17 @@ rt {
     font-size: smaller;
 }
 
+.table050828a {
+    border: none;
+    width: 400px;
+    text-align: center;
+    margin: 10px;
+}
+
+.table050828a th {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
 
 
 @media screen and (min-width:480px) {
