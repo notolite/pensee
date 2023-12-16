@@ -31,8 +31,8 @@ p,
 ul li,
 dl {
     font-weight: 300;
-    text-align: justify;
     margin: 1rem 0;
+    text-align: justify;
     line-height: 3rem;
 }
 
@@ -77,6 +77,14 @@ dt {
 *[lang="xal"] h3 {
     font-family: 'vekos', sans-serif;
     font-weight: bold;
+}
+
+*[lang="en"] p,
+*[lang="fr"] p,
+*[lang="tp"] p,
+*[lang="eu"] p,
+*[lang="xal"] p {
+    text-align: left !important;
 }
 
 article a,
