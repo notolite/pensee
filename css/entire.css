@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "vekos";
+    font-weight: regular;
+    src: url("vekos-regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "vekos";
+    font-weight: bold;
+    src: url("vekos-bold.woff") format("woff");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -38,7 +50,8 @@ dt {
 }
 
 *[lang="jp"],
-*[lang="ru"] {
+*[lang="ru"],
+.latin {
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
 }
 
@@ -55,6 +68,10 @@ dt {
 *[lang="tp"],
 *[lang="eu"] {
     font-family: 'Zilla Slab', serif;
+}
+
+*[lang="xal"] {
+    font-family: 'vekos', sans-serif;
 }
 
 article a,
