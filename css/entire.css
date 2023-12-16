@@ -1,13 +1,13 @@
 @font-face {
     font-family: "vekos";
     font-weight: regular;
-    src: url("vekos-regular.woff") format("woff");
+    src: url("../font/vekos-thin.woff") format("woff");
 }
 
 @font-face {
     font-family: "vekos";
     font-weight: bold;
-    src: url("vekos-bold.woff") format("woff");
+    src: url("../font/vekos-bold.woff") format("woff");
 }
 
 * {
@@ -72,6 +72,11 @@ dt {
 
 *[lang="xal"] {
     font-family: 'vekos', sans-serif;
+}
+
+*[lang="xal"] h3 {
+    font-family: 'vekos', sans-serif;
+    font-weight: bold;
 }
 
 article a,
