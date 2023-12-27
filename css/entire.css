@@ -6,6 +6,12 @@
 
 @font-face {
     font-family: "vekos";
+    font-weight: 500;
+    src: url("../font/vekos-regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "vekos";
     font-weight: bold;
     src: url("../font/vekos-bold.woff") format("woff");
 }
