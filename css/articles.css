@@ -269,3 +269,17 @@ rt {
         line-height: 2rem;
     }
 }
+
+figure {
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    width: 80%;
+
+}
+
+figcaption {
+    font-weight: 300;
+}
