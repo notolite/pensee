@@ -37,8 +37,8 @@ p,
 ul li,
 dl {
     font-weight: 300;
-    margin: 1rem 0;
     text-align: justify;
+    margin: 1rem 0;
     line-height: 3rem;
 }
 
@@ -73,7 +73,7 @@ dt {
 *[lang="fr"],
 *[lang="tp"],
 *[lang="eu"] {
-    font-family: 'Zilla Slab', serif;
+    font-family: 'Merriweather', serif;
 }
 
 *[lang="xal"] {
