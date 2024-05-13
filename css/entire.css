@@ -39,7 +39,6 @@ dl {
     font-weight: 300;
     text-align: justify;
     margin: 1rem 0;
-    line-height: 3rem;
 }
 
 strong {
@@ -189,6 +188,12 @@ i {
         border-left: steelblue solid 8px;
         border-bottom: steelblue solid 8px;
     }
+
+    p,
+    ul li,
+    dl {
+        line-height: 3rem;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -241,6 +246,12 @@ i {
         height: 1rem;
         margin: 0;
         padding: 0;
+    }
+
+    p,
+    ul li,
+    dl {
+        line-height: 2.3rem;
     }
 
 }
