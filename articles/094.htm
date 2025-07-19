@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="jp">
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>白背景の上に線画を書いちゃった！ | les impressions et les expressions</title>
+    <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
+    <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./../css/entire.css">
+    <link rel="stylesheet" href="./../css/articles.css">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@notolitos" />
+    <meta property="og:image" content="https://notolite.github.io/pensee/files/card.png" />
+    <meta property="og:url" content="https://notolite.github.io/pensee/articles/094.htm" />
+    <meta property="og:title" content="白背景の上に線画を書いちゃった！ | les impressions et les expressions" />
+    <style>
+        li {
+            list-style: none;
+            padding-left: 1.3em !important;
+        }
+
+        li::before {
+            content: '●';
+            font-size: small;
+            color: darkcyan;
+            display: inline-block;
+            left: -1.3em;
+            position: relative;
+        }
+
+        p {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>les&#160;impressions et les&#160;expressions</h1>
+    </header>
+    <article lang="jp">
+        <h2 data-num="093" style="letter-spacing: 0;">白背景の上に線画を書いちゃった！</h2>
+        <div class="subtitle">Les lignes dessinées sur l'arrière-plan par erreur !</div>
+        <div class="data">originel, 19 juillet 2025</div>
+        <p>備忘録です。たいしたことなさすぎてgithubのrepositoryを作るほどでもないのでここに書いておきます。たいしたことないというか、有名なソフトのシンプルな使い方を書いているだけです。</p>
+        <p>わたしはmspaint.exeをつかって絵を描いています。mspaint.exeは最近レイヤー機能をサポートし、しかももっと最近デフォルトのレイヤーの背景が透過になりました。なのでかんたんなイラストならだいぶストレスなく描けるようになっています。
+        </p>
+        <p>絵を描くときって、色塗りのレイヤーを線画のレイヤーの下に持っていきたいですよね。でもうっかり線画のレイヤーの背景が透過ではなく白になってしまうと地獄です。そんなあなたにつよい味方！</p>
+        <p>まづ、線画だけのレイヤーを画像として保存します。次に、線画のレイヤーの上から色を塗っていきます。線の上に多少色が被ってしまっても構いません。そして、線画と色のレイヤーをべつの名前で保存します。</p>
+        <p>ここで、<a href="https://imagemagick.org/script/download.php#windows">ImageMagickのVer. 7以降</a>をインストールします。</p>
+        <p>つぎに、<a href="../files/combine.bat">このファイル</a>を二つの画像があるフォルダにダウンロードします。そして二つの画像をこのファイルの上にドラッグアンドドロップ。</p>
+        <p>するとあら不思議！いい感じにresult.extという名前でお目当ての絵が完成しています！</p>
+
+    </article>
+    <footer>
+        <p>écrit par notolite (<a target="_blank" href="https://misskey.io/@notolyte">fediverse</a>)</p>
+        <p>distribué par GitHub Pages</p>
+    </footer><a href="./../index.htm">
+        <div id="returnkey">
+            <div></div>
+            <p>RETOURNER</p>
+        </div>
+    </a>
+</body>
+
+</html>
