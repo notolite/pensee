@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="ja">
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Excelアドイン自慢 | les impressions et les expressions</title>
+    <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
+    <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./../css/entire.css">
+    <link rel="stylesheet" href="./../css/articles.css">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@notolitos" />
+    <meta property="og:image" content="https://notolite.github.io/pensee/files/card.png" />
+    <meta property="og:url" content="https://notolite.github.io/pensee/articles/108.htm" />
+    <meta property="og:title" content="$title | les impressions et les expressions" />
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/a11y-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/highlightjs-vba/dist/vba.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        ol {
+            font-weight: 300;
+            line-height: 3rem;
+            margin-left: 1.5rem;
+        }
+
+        code {
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>les&#160;impressions et les&#160;expressions</h1>
+    </header>
+    <article lang="jp">
+        <h2 data-num="108" style="letter-spacing: 0;">Excelアドイン自慢</h2>
+        <div class="subtitle">une collection des add-ins sur Excel</div>
+        <div class="data">originel, 31 octobre 2025</div>
+        <p>エクセルのアドインを自慢するだけの記事です。話の枕としてきっかけを短く述べたあと、目的別にアドインを自慢していきます。なお、VBAとかいう謎のミレニアムみたいな言語をがんばって書くのは面倒くさいという事情によりコードは大抵生成AIに書かせています。したがって自慢しているのはアイデアであるということにご留意ください。<del>自慢するほどのアイデアか？
+            </del>
+        </p>
+        <h3>きっかけ</h3>
+        <p>会社のパソコンでエクセルのアドインが使われていたので、アドインって便利かも、という気持ちになったことです。</p>
+        <h3>サ集克服シリーズ</h3>
+        <p>古いExcelを使っているので、Excel 2019やMicrosoft 365などで新たに登場した関数が使えません。これをユーザー定義関数によって補っていこうと思います。</p>
+        <h4>IFS関数</h4>
+        <pre>
+<code>Function IFS(ParamArray args() As Variant) As Variant
+    Dim i As Long
+
+    ' Ensure an even number of arguments (condition-value pairs)
+    If UBound(args) Mod 2 <> 1 Then
+        IFS = CVErr(xlErrValue)
+        Exit Function
+    End If
+    ' Loop through condition-value pairs
+    For i = 0 To UBound(args) Step 2
+        If VBA.CBool(args(i)) Then
+            IFS = args(i + 1)
+            Exit Function
+        End If
+    Next i
+    ' If no condition is TRUE, return #N/A
+    IFS = CVErr(xlErrNA)
+End Function
+</code>
+</pre>
+        <h4>XLOOKUP関数</h4>
+        <pre>
+<code>Function XLOOKUP(lookupValue As Variant, _
+                     lookupArray As Variant, _
+                     returnArray As Variant, _
+                     Optional notFoundValue As Variant = CVErr(xlErrNA), _
+                     Optional matchMode As Long = 0, _
+                     Optional searchMode As Long = 1) As Variant
+
+    Dim i As Long
+    Dim matchIndex As Long
+    Dim found As Boolean
+    Dim lowerBound As Long, upperBound As Long
+
+    lowerBound = LBound(lookupArray)
+    upperBound = UBound(lookupArray)
+
+    matchIndex = -1
+    found = False
+
+    ' Determine search direction
+    If searchMode = -1 Then
+        i = upperBound
+        Do While i >= lowerBound
+            If MatchFound(lookupValue, lookupArray(i), matchMode) Then
+                matchIndex = i
+                found = True
+                Exit Do
+            End If
+            i = i - 1
+        Loop
+    Else
+        For i = lowerBound To upperBound
+            If MatchFound(lookupValue, lookupArray(i), matchMode) Then
+                matchIndex = i
+                found = True
+                Exit For
+            End If
+        Next i
+    End If
+
+    If found Then
+        XLOOKUP = returnArray(matchIndex)
+    Else
+        XLOOKUP = notFoundValue
+    End If
+End Function
+</code>
+</pre>
+        <h3>その他</h3>
+        <p>その他です。</p>
+        <h4>「セルを結合すると、左上の端にあるセルの値のみが保持され、他のセルの値は破棄されます。」に立ち向かう</h4>
+        <pre>
+<code>Sub MergeCellsWithData()
+    Dim rng As Range
+    Dim cell As Range
+    Dim combinedText As String
+    Dim firstCell As Range
+
+    ' Exit if only one cell or nothing is selected
+    If Selection.Count <= 1 Then Exit Sub
+    Set rng=Selection Set firstCell=rng.Cells(1) ' The primary cell to hold data after merge
+        
+    ' Concatenate text from each cell using a line break (vbCrLf)
+    For Each cell In rng
+        If cell.Value <> "" Then
+            If combinedText = "" Then
+            combinedText = cell.Value
+            Else
+            ' Append next value with a line break
+            combinedText = combinedText & vbCrLf & cell.Value
+            End If
+        End If
+    Next cell
+
+    ' Disable the standard Excel warning: "Merging cells only keeps the upper-left value..."
+    Application.DisplayAlerts = False
+
+    ' Execute the merge and formatting
+    With rng
+        .Merge
+        .Value = combinedText
+        .VerticalAlignment = xlCenter ' Center text vertically (optional)
+        .WrapText = True ' Required to display the line breaks correctly
+    End With
+
+    ' Re-enable Excel alerts
+    Application.DisplayAlerts = True
+End Sub</code>
+</pre>
+        <p>こんな感じでクイックアクセスツールバーに登録しておくと使いやすいと思います。<br><img
+                src="https://res.cloudinary.com/drwrkm8ji/image/upload/v1773739861/108a.webp"></p>
+        <h3>組み込みかた</h3>
+        <p>必要ないかもしれませんが、中学生のころコードだけ書いてあって動かし方が書いてないサイトがきらいだったので書いておきます：</p>
+        <h4>アドインの作成</h4>
+        <ol>
+            <li>Excelで新しいファイルを開き、Alt + F11でVBAエディタに入る</li>
+            <li>ツールバー「挿入（I）」 > 「標準モジュール（M）」で標準モジュールを挿入</li>
+            <li>出てきた標準モジュールに上記コードを書きいれる</li>
+            <li>Alt + QでVBAエディタを抜ける</li>
+            <li>「名前を付けて保存」でファイルの種類「Excel アドイン (.xlam)」を選び、適当な名前・場所に保存（このファイルはずっと消さずにおいておくことに配慮した場所に保存しよう）</li>
+        </ol>
+        <h4>アドインのインストール</h4>
+        <ol>
+            <li>Excelで適当なファイルを開き、リボン「ファイル」 > 「オプション」 > 「アドイン」</li>
+            <li>ポップアップ左下　管理「設定（G）」 > 「参照（B）」 > さきほど作成したxlam形式のファイルを選択して「開く（O）」</li>
+            <li>OK等をたくさん押して設定から抜け完了
+        </ol>
+        <h3>補遺</h3>
+        <p>最近メイン機がLinuxになったのでExcelはサブ機でしか使わなくなりました。意味ないじゃん……。</p>
+        <hr>
+        <p>終わりです。</p>
+    </article>
+    <footer>
+        <p>écrit par notolite (<a target="_blank" href="https://misskey.io/@notolyte">fediverse</a>)</p>
+        <p>distribué par GitHub Pages</p>
+    </footer><a href="./../index.htm">
+        <div id="returnkey">
+            <div></div>
+            <p>RETOURNER</p>
+        </div>
+    </a>
+</body>
+
+</html>
