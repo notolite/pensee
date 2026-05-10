@@ -253,11 +253,13 @@ rt {
     *[lang="en"] p,
     *[lang="fr"] p,
     *[lang="eu"] p,
-    *[lang="tp"] p {
+    *[lang="tp"] p,
+	{
         font-size: small;
-        line-height: 2.5rem;
     }
-
+	p {
+		line-height: 2.5rem;
+	}
 }
 
 @media screen and (max-width:480px) {
