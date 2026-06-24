@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="jp">
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>らずぱいでブログをセルフホストする | les impressions et les expressions</title>
+    <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
+    <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./../css/entire.css">
+    <link rel="stylesheet" href="./../css/articles.css">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@notolitos" />
+    <meta property="og:image" content="https://notolite.github.io/pensee/files/card.png" />
+    <meta property="og:url" content="https://notolite.github.io/pensee/articles/114.htm" />
+    <meta property="og:title" content="らずぱいでブログをセルフホストする | les impressions et les expressions" />
+    <style>
+        li {
+            list-style: none;
+            padding-left: 1.3em !important;
+        }
+
+        li::before {
+            content: '●';
+            font-size: small;
+            color: darkcyan;
+            display: inline-block;
+            left: -1.3em;
+            position: relative;
+        }
+
+        p {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>les&#160;impressions et les&#160;expressions</h1>
+    </header>
+    <article lang="jp">
+        <h2 data-num="114" style="letter-spacing: 0;">らずぱいでブログをセルフホストする</h2>
+        <div class="subtitle">Une Tentative d'Auto-Hébergement du Blog sur le Raspberry Pi</div>
+        <div class="data">originel, 24 juin 2026</div>
+	<p>現在<a href='http://notolite.com'>notolite.com</a>にて当ブログをセルフホストしています。GitHub Pagesでは/pensee/サブディレクトリ内ですが、セルフホスト版ではドメイン直下です。</p>
+	<h3>なにをしている？</h3>
+	<p><a href="./112.htm">先日購入した</a>Raspberry Pi Zero Wにnginxをインストールし、Webサイトを配信しています。ただし、集合住宅に住んでいる関係でポート開放ができなかったので、初心者向きのCloudflare Tunnelでnotolite.comをlocalhostに繋げているかたちです。</p>
+	<p>余談ですが、notolite.comは先日うっかり買ってしまったドメインです。何も考えずに.comを購入したのですが、べつにコマースしていないことに気が付いたので、意味的にいい感じの.netをあらためて買いました。両方つぎの更新は3年後なので、しばらくは遊休ドメインがあることになります。3年後に.comを更新するかはちょっと怪しいです。</p>
+	<p>余談の余談ですが、ドメインは更新料がかかるので嫌ですね。香辛料は好きですが、更新料は嫌いです。みかぶるさんもドメイン管理料はあまり本質的なお金の取り方ではないので次善策としてbareのIPアドレスを出す方法を構想していました。今回はつぎの更新が3年後なのでまあえいやで買っちゃったっていう感じですが、同じ値段でも毎月100円とか言われると嫌だなあと思います。固定費っぽさを感じる。</p>
+	<p>ドメインはお名前.comで買いました。なんか課金体系が意図的にわかりにくく設定されている感じが嫌なので次回からCloudflare Domainsにしようかなあと思わなくもないですが、Cloudflareはインターネットの世界において巨人すぎるので、嬉しいかと言われるとちょっとよくわかりません。ただDNSは結局Cloudflareに解決してもらっていますし、今回やったセルフホストもCloudflare Tunnelです。</p>
+	<p>お名前.comはほんとうに絶望的に課金体系がわかりにくいですが、要は抱き合わせ商法をしているので、二つ目のドメインはレンタルサーバを契約すると無料というかたちになります。一つ目のドメインは普通に無料です。なので適当に.comを買ってしまったことが一層悔やまれるというわけですね。ただ、このレンタルサーバが2,600円とかでした。すぐに解約してしまったので、3年で2,600円なのか、ふつうに一か月とかなのかよくわからないのですが、ともかくドメインのほうの次の更新は3年後と出ています。とすると、1年あたりUSD 5.3（執筆日のレート、ほんとうにひどいレートですね）、なんか普通に格安のような気もします。これちょっと思ったのですが、インドとかの業者に頼めばもっと安いんじゃないか。個人情報あんまり渡したくないですが……。</p>
+	<h3>セルフホストをすると何が嬉しい？</h3>
+	<p>たのしそうなのでしているだけです。正直GitHub Pagesと見た目は一緒なのでかぎりなく自己満ですね。</p>
+	<p>ところで、GitHubやVPSの障碍は自分の与り知れぬところで置きますが、手許のらずぱいの障碍は手許で起こります。ちょっとsovreignな感じがして嬉しいです。そのほうがより堅確ですとは口が裂けても言えません。</p>
+	<p>ただ、ざんねんながらCloudflare Tunnelをつかっているので、たぶん前みたいにCloudflareが障碍を起こすと一緒に死にます。まあやんちゃってすると大抵痛い目に合うので、こういうのに一通り精通してから数年後とかにポートを開けるほうがいいかもしれませんね。</p>
+	<h3>らずぱい特有の事象について</h3>
+	<p>現在Raspberry Pi Zero 2は品薄で正規には買えず、非正規には高騰しているので、無印Zeroを使っています。この関係で、まだ32bitであり、cloudflaredの導入にやや苦戦しました。らずぱいのOSはふつうにDebian系のらずぱいOSを使っているのですが、ほかのパソコンはArchなので、パッケージマネージャの勝手がよくわかりません。取り敢えずAURって最高っていうことだけわかりました。</p>
+	<p>また、無印なので性能面もだいぶ抑えめで、なのでGUIを入れずに運用しています。X11が入っていないのでssh -Yとかできません。ということで、らずぱい側でhtmlを直接編集しても結果は本番環境でしか確認できません。まあそもそも普通/usr/share/nginx/htmlを毎回いじるほうがおかしいというかどこかで書いてからそこにアップロードしろっていう話ですね。ただローカルで確認すること自体が不可能なので、別の端末で書いて、scpとかでらずぱいに送り、デプロイする必要があります。なんかsshでgit pushしてるみたいですね。</p>
+	<p>ただ結局面倒くさいのでらずぱいの中のファイルを直接いじって結果を見て一喜一憂しています。セルフホストをやってみて知ったのですが、一個のサーバが一個のファイルを反映するだけなら内容って一瞬で更新できるんですね。GitHub Pagesだと一分弱ラグがあるのでそれが当たり前なんだと思っていました。モダンなフレームワークとかができない上に好きじゃないので温かみのある手書きHTML+CSS+JSでお届けしているのもポイントかもしれません。</p>
+	<p>重さもぜんぜん気になりません。内容を更新しても一瞬で配信されるのでCDNとかではないと思います。それはそうとこの間画像を全部Cloudinaryに移してCDNで配信してもらうようにしたので、らずぱいには実質テキストコンテンツしかありません。だから阿部寛なだけかもしれないですね。あと現状フォントはシャレイア語フォント以外Google Fontsから配信する形になっているので、そこをセルフにしたらどうなるかは見ものかもしれません。</p>
+	<p>そういえばらずぱいだと性能的にHTTPSは厳しいってどこかで見たのでいまのところHTTP通信にしか対応していません。なんらかの手段でページが改竄されちゃったらなんでもありということになってしまうので、よろしくお願いします（どうよろしくお願いするんだ？）。このページにはフォームとかはないはづなので、万一見かけてもなにも入力しないでください。心配ならJSを無効にしたりしてみてください。心配ならアクセスしないでください。そのうち興味が出たらTSLのやりかたも調べてみようと思います。</p>
+	<hr>
+	<p>とりとめのない雑記になってしまいましたが、今回は以上です。5年後にはオンラインカジノになっているかもしれないので、notolite.comへのリンクは非推奨ですが、せっかくなのであとで魚拓でも取っておこうと思います。それでは。</p>
+    </article>
+    <footer>
+        <p>écrit par notolite (<a target="_blank" href="https://misskey.io/@notolyte">fediverse</a>)</p>
+        <p>distribué par GitHub Pages</p>
+    </footer><a href="./../index.htm">
+        <div id="returnkey">
+            <div></div>
+            <p>RETOURNER</p>
+        </div>
+    </a>
+</body>
+
+</html>
