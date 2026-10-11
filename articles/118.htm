@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="en">
+    <meta charset="utf-8">
+    <meta name="robots">
+    <title>memorandum for scrcpy over Tailscale | les impressions et les expressions</title>
+    <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
+    <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../css/entire.css">
+    <link rel="stylesheet" href="./../css/articles.css">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@notolitos" />
+	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/a11y-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@highlightjs/cdn-assets@11.12.0/languages/bash.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+    <meta property="og:image" content="https://notolite.github.io/pensee/files/card.png" />
+    <meta property="og:url" content="https://notolite.github.io/pensee/articles/118.htm" />
+    <meta property="og:title" content="memorandum for scrcpy over Tailscale | les impressions et les expressions" />
+    <style>
+        code {
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+		h4 {
+			font-family: Lexend, sans-serif;
+			margin: 20px 0;
+			color: #333;
+			margin-left: 12px;
+		}
+		h4::before {
+			content: '';
+			display: inline-block;
+			background: #6495ed;
+			height: 1em;
+			width: 5px;
+			position: relative;
+			left: -8px;
+			top: 2px;
+			border-radius: 2.5px;
+		}
+		ul li, ol li{
+			line-height: 1.5rem !important;	
+			margin-left: 15px;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		ul li {
+			list-style: none;
+		}
+		ul li::before {
+			content: '-';
+			color: #6495ed;
+			font-size: smaller;
+			position: relative;
+			left: -5px;
+		}
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>les&#160;impressions et les&#160;expressions</h1>
+    </header>
+    <article lang="en">
+        <h2 data-num="118" style='font-family: serif;'>A memorandum for scrcpy over Tailscale</h2>
+	<div class="subtitle">Une note sur l'utilisation de scrcpy via Tailscale</div>
+        <div class="data"></div>
+		<p>memorandum for myself</p>
+		<h3>Procedure</h3>
+		<ol>
+			<li>Enable Tailscale networking on Android</li>
+			<li>Enable wireless debugging</li>
+			<li>Check port numbr for wireless debugging</li>
+			<li>Execute below:<br><pre><code>adb connect (device name):(port number)
+# Tailscale DNS available for the device naming
+scrcpy</code></pre></li>
+		</ol>
+		<h3>Presuppositions</h3>
+		<h4>Linux</h4>
+		<ul>
+			<li>scrcpy</li>
+			<li>android-tools</li>
+			<li>Tailscale</li>
+		</ul>
+		<h4>Android</h4>
+		<ul>
+			<li>Tailscale</li>
+			<li>Developer's option - enabled</li>
+			<li>Devices on wireless debugging paired</li>
+		</ul>
+		<h3>Yes/No that I'm often unsure of</h3>
+		<ul>
+			<li>USB debugging can be remained off</li>
+			<li>Device pairing persists over toggling wireless debugging</li>
+		</ul>
+
+    </article>
+    <footer>
+        <p>écrit par notolite (<a target="_blank" href="https://misskey.io/@notolyte">fediverse</a>)</p>
+        <p>distribué par GitHub Pages</p>
+    </footer><a href="./../index.htm">
+        <div id="returnkey">
+            <div></div>
+            <p>RETOURNER</p>
+        </div>
+    </a>
+</body>
+
+</html>
