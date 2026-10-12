@@ -29,36 +29,12 @@
         }
 		h4 {
 			font-family: Lexend, sans-serif;
-			margin: 20px 0;
-			color: #333;
-			margin-left: 12px;
 		}
-		h4::before {
-			content: '';
-			display: inline-block;
-			background: #6495ed;
-			height: 1em;
-			width: 5px;
-			position: relative;
-			left: -8px;
-			top: 2px;
-			border-radius: 2.5px;
-		}
-		ul li, ol li{
+		ol li{
 			line-height: 1.5rem !important;	
 			margin-left: 15px;
 			margin-top: 1rem;
 			margin-bottom: 1rem;
-		}
-		ul li {
-			list-style: none;
-		}
-		ul li::before {
-			content: '-';
-			color: #6495ed;
-			font-size: smaller;
-			position: relative;
-			left: -5px;
 		}
     </style>
 </head>
@@ -68,7 +44,7 @@
         <h1>les&#160;impressions et les&#160;expressions</h1>
     </header>
     <article lang="en">
-        <h2 data-num="118" style='font-family: serif;'>A memorandum for scrcpy over Tailscale</h2>
+        <h2 data-num="118">A memorandum for scrcpy over Tailscale</h2>
 	<div class="subtitle">Une note sur l'utilisation de scrcpy via Tailscale</div>
         <div class="data"></div>
 		<p>memorandum for myself</p>
@@ -82,20 +58,20 @@
 scrcpy</code></pre></li>
 		</ol>
 		<h3>Presuppositions</h3>
-		<h4>Linux</h4>
-		<ul>
+		<h4 class='station_title'>Linux</h4>
+		<ul class='simple_ul'>
 			<li>scrcpy</li>
 			<li>android-tools</li>
 			<li>Tailscale</li>
 		</ul>
-		<h4>Android</h4>
-		<ul>
+		<h4 class='station_title'>Android</h4>
+		<ul class='simple_ul'>
 			<li>Tailscale</li>
 			<li>Developer's option - enabled</li>
 			<li>Devices on wireless debugging paired</li>
 		</ul>
 		<h3>Yes/No that I'm often unsure of</h3>
-		<ul>
+		<ul class='simple_ul'>
 			<li>USB debugging can be remained off</li>
 			<li>Device pairing persists over toggling wireless debugging</li>
 		</ul>

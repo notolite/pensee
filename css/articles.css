@@ -17,10 +17,11 @@ h2:not(.subtitle) {
 *[lang="eu"] h2,
 *[lang="tp"] h2 {
     font-style: italic;
+	font-family: serif;
 }
 
 .subtitle {
-    color: steelblue;
+    color: var(--first-accent-color);
     line-height: 4rem;
     font-size: 2.5rem;
     font-weight: 500;
@@ -35,10 +36,62 @@ h2:not(.subtitle)::before {
 }
 
 h4 {
-    color: inherit;
     font-weight: 700;
 }
-
+h4 {
+    color: var(--third-accent-color);
+}
+h4.station_title {
+	margin: 20px 0;
+	color: #333;
+	margin-left: 12px;
+}
+h4.station_title::before {
+    content: '';
+	display: inline-block;
+	background: var(--third-accent-color);
+	height: 1em;
+	width: 5px;
+	position: relative;
+	left: -8px;
+	top: 2px;
+	border-radius: 2.5px;
+}
+ul.ladder_ul {
+    border-left: 4px solid lightblue;
+	padding-left: 15px;
+}
+ul.ladder_ul li {
+    list-style: none;
+}
+ul.ladder_ul li::before {
+    content: '';
+	display: inline-block;
+	height: 4px;
+	width: 8px;
+	margin-left: -16px;
+	margin-right: 8px;
+	background-color: lightblue;
+}
+ul.simple_ul li {
+    line-height: 1.5rem !important;	
+	margin-left: 15px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	list-style: none;
+}
+ul.simple_ul li::before {
+    content: '-';
+	color: var(--third-accent-color);
+	font-size: smaller;
+	position: relative;
+	left: -5px;
+}
+code {
+    /* for highlight.js */
+    border-radius: 10px;
+    margin: 10px 0;
+}
 .data {
     color: #555;
     text-align: right;
@@ -52,7 +105,7 @@ p[lang="ru"] ruby {
 }
 
 ruby[title] {
-    color: steelblue;
+    color: var(--first-accent-color);
 }
 
 .trd {
@@ -61,7 +114,7 @@ ruby[title] {
 }
 
 p[lang="ru"] rt {
-    color: steelblue;
+    color: var(--first-accent-color);
 }
 
 
@@ -87,7 +140,7 @@ rt {
     line-height: 1rem;
     width: max-content;
     text-align: left;
-    color: steelblue;
+    color: var(--first-accent-color);
     font-size: smaller;
     overflow: visible;
     white-space: nowrap;
@@ -114,7 +167,7 @@ rt {
 
 #r040322a0 {
     font-weight: 300;
-    background-color: steelblue;
+    background-color: var(--first-accent-color);
     color: white;
     padding: 0.2rem;
 }
@@ -136,12 +189,12 @@ rt {
 #r040322a1 {
     font-weight: 300;
     padding: 0.4rem;
-    border: solid steelblue 1px;
+    border: solid var(--first-accent-color) 1px;
 }
 
 #r040322a1::after {
     content: '▲';
-    background-color: steelblue;
+    background-color: var(--first-accent-color);
     color: white;
     position: absolute;
     right: 0.4rem;
@@ -243,7 +296,18 @@ rt {
     border-bottom: 2px solid black;
 }
 
-
+table.fancy_table {
+	line-height: 2rem;
+	text-align: center;
+}
+table.fancy_table th {
+	background: #00afcc;
+	color: white;
+}
+table.fancy_table td {
+	border-bottom: #333 1px dotted;
+	font-weight: 300;
+}
 @media screen and (min-width:480px) {
     .code p {
         width: calc(100% - 0.4rem);
@@ -253,7 +317,7 @@ rt {
     *[lang="en"] p,
     *[lang="fr"] p,
     *[lang="eu"] p,
-    *[lang="tp"] p,
+    *[lang="tp"] p
 	{
         font-size: small;
     }
