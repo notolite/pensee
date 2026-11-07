@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="en">
+    <meta charset="utf-8">
+    <meta name="robots">
+    <title>memorandum for scrcpy over Tailscale | les impressions et les expressions</title>
+    <link rel="icon" type="image/svg+xml" href="./../files/favicon.svg">
+    <link rel="icon alternate" type="image/png" href="./../files/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Merriweather:wght@300&family=Noto+Sans+JP:wght@300&family=Noto+Sans+SC:wght@300&family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../css/entire.css">
+    <link rel="stylesheet" href="./../css/articles.css">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@notolitos" />
+	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/a11y-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@highlightjs/cdn-assets@11.12.0/languages/bash.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+    <meta property="og:image" content="https://notolite.github.io/pensee/files/card.png" />
+    <meta property="og:url" content="https://notolite.github.io/pensee/articles/119.htm" />
+    <meta property="og:title" content="memorandum for scrcpy over Tailscale | les impressions et les expressions" />
+    <style>
+        code {
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+		h4 {
+			font-family: Lexend, sans-serif;
+		}
+		ol li{
+			line-height: 1.5rem !important;	
+			margin-left: 15px;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>les&#160;impressions et les&#160;expressions</h1>
+    </header>
+    <article lang="en">
+        <h2 data-num="119">Memorandum: Use of LineApp on Proton-GE</h2>
+	<div class="subtitle">Une note sur l'utilisation du LineApp sur le Proton-GE</div>
+        <div class="data">07 novembre 2026</div>
+		<p>This is a memorandum for myself about the way of introducing LINE on Proton-GE with umu-launcher, solving windows dll signature problem.</p>
+		<h3>Reference</h3>
+		<ul class='simple_ul'>
+			<li lang='zh'><a href='https://181bit.blogspot.com/2026/08/linux-wine-line.html'>Linux上的wine一鍵化Line簽署協助安裝工具 - 手把手教學 | 181 Bits</a></li>
+			<li lang='jp'><a href='https://zenn.dev/snacy/articles/1d78d767a13d3a'>HyprlandにLINEをインストールする | snacy on Zenn</a></li>
+		</ul>
+		<h3>Procedures</h3>
+		<ol>
+			<li>Download LineInst.exe<pre><code>curl -fO https://desktop.line-scdn.net/win/bin/real/installer/LineInst.exe</code></pre></li>
+			<li>Download shell script from https://181bit.blogspot.com/2026/08/linux-wine-line.html<pre><code>curl -f https://raw.githubusercontent.com/maker181/LineMessenger_Wine/refs/heads/main/fix_line_wine.sh
+chmod +x /tmp/fix_line_wine.sh
+/tmp/fix_line_wine.sh</code></pre>When fix_line_wine.sh prompts to select Bottles windir, indeed the script still works if you select ~/Game/umu/umu-launcher/drive_c/windows/ or wherever.</li>
+				<li>Prepare two registry files to be used later.<br><h4 class='station_title'>graphics.reg</h4><pre><code>Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Wine\Drivers]
+"Graphics"="x11"
+
+[HKEY_CURRENT_USER\Software\Wine\X11 Driver]
+"UseEGL"="N</code></pre><h4 class='station_title'>font.reg</h4><pre><code>Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Wine\Fonts\Replacements]
+"Arial"="Liberation Sans"
+"Arial Unicode MS"="Noto Sans CJK JP"
+"MS Shell Dlg"="Liberation Sans"
+"MS Shell Dlg 2"="Liberation Sans"
+"Segoe UI"="Liberation Sans"
+"Segoe UI Semibold"="Liberation Sans"
+"Tahoma"="Liberation Sans"
+"Verdana"="Liberation Sans"
+"Meiryo"="Noto Sans CJK JP"
+"Meiryo UI"="Noto Sans CJK JP"
+"MS Gothic"="Noto Sans CJK JP"
+"MS PGothic"="Noto Sans CJK JP"
+"MS UI Gothic"="Noto Sans CJK JP"
+"Yu Gothic"="Noto Sans CJK JP"
+"Yu Gothic UI"="Noto Sans CJK JP"
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingGamma"=dword:00000578
+"FontSmoothingOrientation"=dword:00000001
+"FontSmoothingType"=dword:00000002</code></pre></li>
+		<li>Install LINE as normal.</li>
+		<li>Edit registry. An easier way is to launch Regedit.exe GUI and import two files prepared above.<pre><code>umu-launcher regedit.exe</code></pre></li>
+		<li>Afrer successfully installed, LINE can be launched with umu-run. It would be convenient to create a script for this.<pre><code>#!/bin/bash
+umu-run $HOME/Games/umu/umu-default/drive_c/users/steamuser/AppData/Local/LINE/bin/LineLauncher.exe
+# above path is for example</code></pre>The warning message for signature still appears, but it can be ignored.</li>
+    </article>
+    <footer>
+        <p>écrit par notolite (<a target="_blank" href="https://misskey.io/@notolyte">fediverse</a>)</p>
+        <p>distribué par GitHub Pages</p>
+    </footer><a href="./../index.htm">
+        <div id="returnkey">
+            <div></div>
+            <p>RETOURNER</p>
+        </div>
+    </a>
+</body>
+
+</html>
